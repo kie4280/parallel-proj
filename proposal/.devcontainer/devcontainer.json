@@ -1,0 +1,186 @@
+{
+    "name": "proj-proposal",
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "service": "vscode",
+    "runServices": [
+        "vscode"
+    ],
+    "shutdownAction": "stopCompose",
+    "workspaceFolder": "/workspace",
+    "postCreateCommand": "",
+    "extensions": [
+        "james-yu.latex-workshop",
+        // Git
+        "eamodio.gitlens",
+        // Other helpers
+        "shardulm94.trailing-spaces",
+        "stkb.rewrap", // rewrap comments after n characters on one line
+        // Other
+        "vscode-icons-team.vscode-icons",
+    ],
+    "settings": {
+        // General settings
+        "files.eol": "\n",
+        // Latex settings
+        "latex-workshop.chktex.enabled": true,
+        "latex-workshop.latex.clean.subfolder.enabled": true,
+        "latex-workshop.latex.autoClean.run": "onBuilt",
+        "editor.formatOnSave": false,
+        "files.associations": {
+            "*.tex": "latex"
+        },
+        "latex-workshop.view.pdf.viewer": "tab",
+        "latex-workshop.latex.autoBuild.run": "onSave",
+        "latex-workshop.latex.tools": [
+            {
+                "name": "latexmk",
+                "command": "latexmk",
+                "args": [
+                    "-xelatex",
+                    "-shell-escape",
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "-outdir=%OUTDIR%",
+                    "%DOC%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "lualatexmk",
+                "command": "latexmk",
+                "args": [
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "-lualatex",
+                    "-outdir=%OUTDIR%",
+                    "%DOC%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "latexmk_rconly",
+                "command": "latexmk",
+                "args": [
+                    "%DOC%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "pdflatex",
+                "command": "pdflatex",
+                "args": [
+                    "-shell-escape",
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "%DOC%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "bibtex",
+                "command": "bibtex",
+                "args": [
+                    "%DOCFILE%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "rnw2tex",
+                "command": "Rscript",
+                "args": [
+                    "-e",
+                    "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+                ],
+                "env": {}
+            },
+            {
+                "name": "jnw2tex",
+                "command": "julia",
+                "args": [
+                    "-e",
+                    "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+                ],
+                "env": {}
+            },
+            {
+                "name": "jnw2texmintex",
+                "command": "julia",
+                "args": [
+                    "-e",
+                    "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+                ],
+                "env": {}
+            },
+            {
+                "name": "tectonic",
+                "command": "tectonic",
+                "args": [
+                    "--synctex",
+                    "--keep-logs",
+                    "%DOC%.tex"
+                ],
+                "env": {}
+            }
+        ],
+        "latex-workshop.latex.recipes": [
+            {
+                "name": "latexmk 🔃",
+                "tools": [
+                    "latexmk"
+                ]
+            },
+            {
+                "name": "latexmk (latexmkrc)",
+                "tools": [
+                    "latexmk_rconly"
+                ]
+            },
+            {
+                "name": "latexmk (lualatex)",
+                "tools": [
+                    "lualatexmk"
+                ]
+            },
+            {
+                "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+                "tools": [
+                    "pdflatex",
+                    "bibtex",
+                    "pdflatex",
+                    "pdflatex"
+                ]
+            },
+            {
+                "name": "Compile Rnw files",
+                "tools": [
+                    "rnw2tex",
+                    "latexmk"
+                ]
+            },
+            {
+                "name": "Compile Jnw files",
+                "tools": [
+                    "jnw2tex",
+                    "latexmk"
+                ]
+            },
+            {
+                "name": "tectonic",
+                "tools": [
+                    "tectonic"
+                ]
+            }
+        ],
+        "latex-workshop.latexindent.args": [
+            "-c",
+            "%DIR%/",
+            "%TMPFILE%",
+            "-y=defaultIndent: '  ', maximumIndentation:'    '"
+        ],
+    }
+}
