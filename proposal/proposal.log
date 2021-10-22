@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.22)  22 OCT 2021 03:37
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.22)  22 OCT 2021 03:55
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1259,19 +1259,17 @@ LaTeX Info: Redefining \nameref on input line 89.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Excluding 'CCSXML' comment.
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 194.
+(Font)              scaled to size 17.28pt on input line 161.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 17.28pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
-
 
 Package xeCJK Warning: Unknown CJK family `\CJKsfdefault' is being ignored.
 (xeCJK)                
 (xeCJK)                Try to use `\setCJKsansfont[...]{...}' to define it.
 
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 194.
+(Font)              scaled to size 17.28pt on input line 161.
 Requested font "[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 17.28pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R.otf
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1279,96 +1277,53 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/b/n' will be
-(Font)              scaled to size 17.28pt on input line 194.
+(Font)              scaled to size 17.28pt on input line 161.
 Requested font "[LinBiolinum_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 17.28pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_RB.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 194.
+(Font)              scaled to size 12.0pt on input line 161.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 12.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
 Requested font "[NotoSansTC-Regular].otf/OT:script=hani;language=dflt;" at 12.0pt
  -> ./NotoSansTC-Regular.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 194.
+(Font)              scaled to size 10.0pt on input line 161.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 10.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
 File: MCTS-steps.png Graphic file (type bmp)
 <MCTS-steps.png>
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
-(Font)              scaled to size 9.0pt on input line 194.
+(Font)              scaled to size 9.0pt on input line 161.
 Requested font "[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RB.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
-(Font)              scaled to size 7.0pt on input line 194.
+(Font)              scaled to size 7.0pt on input line 161.
 Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RI.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
-(Font)              scaled to size 10.95pt on input line 194.
+(Font)              scaled to size 10.95pt on input line 161.
 Requested font "[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 10.95pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RB.otf
-Requested font "MinLibReg-ot1" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/MinLibReg-ot1.tfm
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `minlibertine' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/minlibertine/m/n/9'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/minlibertine/m/n/7.3'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `OT1/minlibertine/m/n/5.5'.
-(microtype)             Ignoring protrusion settings for this character.
-Requested font "nxlmi" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/nxlmi.tfm
-Requested font "ntxsy" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsy.tfm
-Requested font "ntxexx" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexx.tfm
-Requested font "msam10" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-(/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-Requested font "msbm10" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
- (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-Requested font "nxlmia" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/nxlmia.tfm
-Requested font "ntxsym" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsym.tfm
-Requested font "ntxsyc" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
-Requested font "ntxexa" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 7.3pt on input line 194.
-Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.3pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
-(Font)              scaled to size 9.0pt on input line 194.
-Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RI.otf
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 194.
+(Font)              scaled to size 8.0pt on input line 161.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 8.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
-(Font)              scaled to size 8.0pt on input line 194.
+(Font)              scaled to size 8.0pt on input line 161.
 Requested font "[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 8.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RB.otf
 Requested font "[NotoSansTC-Regular].otf/OT:script=hani;language=dflt;" at 8.0pt
  -> ./NotoSansTC-Regular.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
-(Font)              scaled to size 8.0pt on input line 194.
+(Font)              scaled to size 8.0pt on input line 161.
 Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 8.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RI.otf
 Requested font "MinLibReg-ot1" at 8.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/MinLibReg-ot1.tfm
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `minlibertine' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 Package microtype Info: Character `AE ' is missing
 (microtype)             in font `OT1/minlibertine/m/n/8'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1376,6 +1331,9 @@ Requested font "MinLibReg-ot1" at 6.2pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/MinLibReg-ot1.tfm
 Package microtype Info: Character `AE ' is missing
 (microtype)             in font `OT1/minlibertine/m/n/6.2'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/m/n/5.5'.
 (microtype)             Ignoring protrusion settings for this character.
 Requested font "nxlmi7" at 8.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/nxlmi7.tfm
@@ -1391,10 +1349,16 @@ Requested font "ntxexx" at 6.2pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexx.tfm
 Requested font "msam10" at 8.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+(/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
 Requested font "msam7" at 6.2pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 Requested font "msbm10" at 8.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
 Requested font "msbm7" at 6.2pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 Requested font "nxlmia" at 8.0pt
@@ -1414,9 +1378,40 @@ Requested font "ntxexa" at 8.0pt
 Requested font "ntxexa" at 6.2pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 
-Underfull \vbox (badness 2418) has occurred while \output is active []
+Overfull \hbox (2.37189pt too wide) in paragraph at lines 161--161
+\TU/LinLibertine(0)/m/it/8 ence’17). \TU/LinLibertine(0)/m/n/8 ACM, New York, NY, USA, []5[] pages. []$[][][][][] [] [] [] [][][] [] [][][] [] [][] [] [][][][] [] [][][][][][][] []
+ []
 
-
+Requested font "MinLibReg-ot1" at 9.0pt
+ -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/MinLibReg-ot1.tfm
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/m/n/9'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/m/n/7.3'.
+(microtype)             Ignoring protrusion settings for this character.
+Requested font "nxlmi" at 9.0pt
+ -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/nxlmi.tfm
+Requested font "ntxsy" at 9.0pt
+ -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsy.tfm
+Requested font "ntxexx" at 9.0pt
+ -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexx.tfm
+Requested font "msam10" at 9.0pt
+ -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+Requested font "msbm10" at 9.0pt
+ -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+Requested font "nxlmia" at 9.0pt
+ -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/nxlmia.tfm
+Requested font "ntxsym" at 9.0pt
+ -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsym.tfm
+Requested font "ntxsyc" at 9.0pt
+ -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
+Requested font "ntxexa" at 9.0pt
+ -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
+(Font)              scaled to size 7.3pt on input line 165.
+Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.3pt
+ -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
 
 Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
 (xeCJK)                
@@ -1429,88 +1424,79 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
-(Font)              scaled to size 7.3pt on input line 224.
+(Font)              scaled to size 9.0pt on input line 179.
+Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 9.0pt
+ -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RI.otf
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
+(Font)              scaled to size 7.3pt on input line 191.
 Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.3pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RI.otf
+Requested font "[NotoSansTC-Regular].otf/OT:script=hani;language=dflt;" at 9.0pt
+ -> ./NotoSansTC-Regular.otf
 [1.1
 
 ]
-Requested font "[NotoSansTC-Regular].otf/OT:script=hani;language=dflt;" at 9.0pt
- -> ./NotoSansTC-Regular.otf
-
-Overfull \hbox (2.23755pt too wide) in paragraph at lines 263--267
+Overfull \hbox (2.23755pt too wide) in paragraph at lines 230--234
 [][][]\TU/inconsolata(0)/m/n/9 anonymous,review[]\TU/LinLibertine(0)/m/n/9 : Suitable for a “double-blind” conference
  []
 
 
-Overfull \hbox (6.94928pt too wide) in paragraph at lines 313--317
+Overfull \hbox (6.94928pt too wide) in paragraph at lines 280--284
 \TU/LinLibertine(0)/m/n/9 tification. Multiple authors may share one affiliation. Authors’ names
  []
 
-
-Underfull \vbox (badness 3942) has occurred while \output is active []
-
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 380.
+(Font)              scaled to size 9.0pt on input line 362.
 Requested font "[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R.otf
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 380.
+(Font)              scaled to size 7.0pt on input line 362.
 Requested font "[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R.otf
- [2.2]
-Overfull \hbox (7.85179pt too wide) in paragraph at lines 397--401
+[2.2]
+Overfull \hbox (7.85179pt too wide) in paragraph at lines 364--368
 \TU/LinLibertine(0)/m/n/9 Your work should use standard L[]T[]X sectioning commands: [][]\TU/inconsolata(0)/m/n/9 section[]\TU/LinLibertine(0)/m/n/9 ,
  []
 
 
-Overfull \hbox (2.30553pt too wide) in paragraph at lines 397--401
+Overfull \hbox (2.30553pt too wide) in paragraph at lines 364--368
 [][]\TU/inconsolata(0)/m/n/9 subsection[]\TU/LinLibertine(0)/m/n/9 , [][]\TU/inconsolata(0)/m/n/9 subsubsection[]\TU/LinLibertine(0)/m/n/9 , and [][]\TU/inconsolata(0)/m/n/9 paragraph[]\TU/LinLibertine(0)/m/n/9 . They should be num-
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3291) has occurred while \output is active []
 
-File: sample-franklin.png Graphic file (type bmp)
-<sample-franklin.png>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[3.3]
 Requested font "[NotoSansTC-Regular]/B.otf/OT:script=hani;language=dflt;" at 9.0pt
  -> ./NotoSansTC-Regular.otf
 
-Overfull \hbox (9.5758pt too wide) in paragraph at lines 541--554
+Overfull \hbox (9.5758pt too wide) in paragraph at lines 501--514
 \TU/LinLibertine(0)/m/n/9 2000 characters long (including spaces). \TU/LinLibertine(0)/b/n/9 Figure descriptions should
  []
 
+[3.3]
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/sc' will be
-(Font)              scaled to size 9.0pt on input line 572.
+(Font)              scaled to size 9.0pt on input line 532.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
 
-Overfull \hbox (1.29532pt too wide) in paragraph at lines 579--581
+Overfull \hbox (1.29532pt too wide) in paragraph at lines 539--541
 []\TU/LinLibertine(0)/m/n/9 The bibliography is included in your source document with these
  []
 
 
-Overfull \hbox (18.1033pt too wide) in paragraph at lines 588--593
+Overfull \hbox (18.1033pt too wide) in paragraph at lines 548--553
 \TU/LinLibertine(0)/m/n/9 command in the \TU/LinLibertine(0)/b/n/9 preamble \TU/LinLibertine(0)/m/n/9 (before the command “[][]\TU/inconsolata(0)/m/n/9 \begin{document}[]\TU/LinLibertine(0)/m/n/9 ”)
  []
 
 
-Underfull \vbox (badness 3029) has occurred while \output is active []
-
- [4.4]
-Overfull \hbox (4.73006pt too wide) in paragraph at lines 650--653
+Overfull \hbox (4.73006pt too wide) in paragraph at lines 610--613
 \TU/LinLibertine(0)/m/n/9 If your work needs an appendix, add it before the “[][]\TU/inconsolata(0)/m/n/9 \end{document}[]\TU/LinLibertine(0)/m/n/9 ”
  []
 
 Processing 'acks' comment.
 \openout3 = `comment.cut'.
 
- Comment 'acks' writing to comment.cut. Straight input of comment.cut. (./comment.cut) (./proposal.bbl
+ Comment 'acks' writing to comment.cut. Straight input of comment.cut. (./comment.cut) (./proposal.bbl [4.4]
 LaTeX Info: Redefining \tempurl on input line 64.
 LaTeX Info: Redefining \tempurl on input line 79.
 LaTeX Info: Redefining \tempurl on input line 102.
@@ -1525,19 +1511,21 @@ LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
 (Font)              scaled to size 5.5pt on input line 367.
 Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 5.5pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RI.otf
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 LaTeX Info: Redefining \tempurl on input line 383.
 LaTeX Info: Redefining \tempurl on input line 397.
 LaTeX Info: Redefining \tempurl on input line 409.
 LaTeX Info: Redefining \tempurl on input line 422.
 LaTeX Info: Redefining \tempurl on input line 436.
 LaTeX Info: Redefining \tempurl on input line 506.
- [5.5]
 LaTeX Info: Redefining \tempurl on input line 521.
 LaTeX Info: Redefining \tempurl on input line 532.
 LaTeX Info: Redefining \tempurl on input line 544.
 LaTeX Info: Redefining \tempurl on input line 557.
 )
-Overfull \hbox (1.8398pt too wide) in paragraph at lines 698--703
+Overfull \hbox (1.8398pt too wide) in paragraph at lines 658--663
 \TU/LinLibertine(0)/m/n/9 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi male-
  []
 
@@ -1545,17 +1533,25 @@ Overfull \hbox (1.8398pt too wide) in paragraph at lines 698--703
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 ) (/usr/local/texlive/2021/texmf-dist/tex/generic/stringenc/se-utf32be.def
 File: se-utf32be.def 2019/11/29 v1.12 stringenc: UTF-32BE
-) [6.6] (./proposal.aux)
+)
+
+Class acmart Warning: CCS concepts are mandatory for papers over two pages.
+
+
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
+
+[5.5] (./proposal.aux)
 Package rerunfilecheck Info: File `proposal.out' has not changed.
-(rerunfilecheck)             Checksum: 37172691C0F52EF3718F9BD14392A1FF;4127.
+(rerunfilecheck)             Checksum: E966C0BDB270F50D1C271DC1EF8F63A4;4126.
  ) 
 Here is how much of TeX's memory you used:
- 31294 strings out of 476473
- 612111 string characters out of 5816481
- 1013544 words of memory out of 5000000
- 51116 multiletter control sequences out of 15000+600000
+ 31267 strings out of 476473
+ 611489 string characters out of 5816481
+ 1018329 words of memory out of 5000000
+ 51092 multiletter control sequences out of 15000+600000
  431203 words of font info for 153 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
- 103i,12n,131p,893b,32772s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 103i,11n,131p,893b,32772s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on proposal.xdv (6 pages, 335584 bytes).
+Output written on proposal.xdv (5 pages, 327076 bytes).
