@@ -1,17 +1,17 @@
 %%
-%% This is file `sample-acmsmall-conf.tex',
+%% This is file `sample-sigconf.tex',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% samples.dtx  (with options: `acmsmall-conf')
+%% samples.dtx  (with options: `sigconf')
 %% 
 %% IMPORTANT NOTICE:
 %% 
 %% For the copyright see the source file.
 %% 
 %% Any modified versions of this file must be renamed
-%% with new filenames distinct from sample-acmsmall-conf.tex.
+%% with new filenames distinct from sample-sigconf.tex.
 %% 
 %% For distribution of the original source see the terms
 %% for copying and modification in the file samples.dtx.
@@ -21,22 +21,21 @@
 %% same distribution. (The sources need not necessarily be
 %% in the same archive or directory.)
 %%
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%%
 %% The first command in your LaTeX source must be the \documentclass command.
-\documentclass[acmsmall]{acmart}
-%% NOTE that a single column version is required for 
-%% submission and peer review. This can be done by changing
-%% the \doucmentclass[...]{acmart} in this template to 
-%% \documentclass[acmsmall,screen,review]{acmart}
-%% Or use the sample-acmsmall-submission.tex file.
-%% 
-%% To ensure 100% compatibility, please check the white list of
-%% approved LaTeX packages to be used with the Master Article Template at
-%% https://www.acm.org/publications/taps/whitelist-of-latex-packages 
-%% before creating your document. The white list page provides 
-%% information on how to submit additional LaTeX packages for 
-%% review and adoption.
-%% Fonts used in the template cannot be substituted; margin 
-%% adjustments are not allowed.
+\documentclass[sigconf]{acmart}
 
 %%
 %% \BibTeX command to typeset BibTeX logo in the docs
@@ -49,23 +48,18 @@
 %% values in them; it is your responsibility as an author to replace
 %% the commands and values with those provided to you when you
 %% complete the rights form.
-
-
-% \setcopyright{acmcopyright}
-% \copyrightyear{2021}
-% \acmYear{2021}
-
-
-
+\setcopyright{acmcopyright}
+\copyrightyear{2018}
+\acmYear{2018}
 \acmDOI{10.1145/1122445.1122456}
 
 %% These commands are for a PROCEEDINGS abstract or paper.
-%%\acmConference[Woodstock '18]{Woodstock '18: ACM Symposium on Neural
-%%  Gaze Detection}{June 03--05, 2018}{Woodstock, NY}
-% \acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
-%   June 03--05, 2018, Woodstock, NY}
-% \acmPrice{15.00}
-% \acmISBN{978-1-4503-XXXX-X/18/06}
+\acmConference[Woodstock '18]{Woodstock '18: ACM Symposium on Neural
+  Gaze Detection}{June 03--05, 2018}{Woodstock, NY}
+\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+  June 03--05, 2018, Woodstock, NY}
+\acmPrice{15.00}
+\acmISBN{978-1-4503-XXXX-X/18/06}
 
 
 %%
@@ -87,19 +81,17 @@
 %% the next command will enable that style.
 %%\citestyle{acmauthoryear}
 
-
 \usepackage{xeCJK}
-% \setCJKmainfont{Noto Sans CJK}
+\setCJKmainfont{[NotoSansTC-Regular.otf]}
 
 %%
 %% end of the preamble, start of the body of the document source.
 \begin{document}
 
-
 %%
 %% The "title" command has an optional parameter,
 %% allowing the author to define a "short title" to be used in page headers.
-\title{Exploring the ways of MCTS parallelization}
+\title{Exploring Parallel MCTS on Chess Game}
 
 %%
 %% The "author" command and its associated commands are used to define
@@ -108,26 +100,23 @@
 %% "authornote" and "authornotemark" commands
 %% used to denote shared contribution to the research.
 
-% \author{曾正豪 0716325}
-% \affiliation{%
-%   \institution{CS NYCU}
-%   \city{Hsinchu}
-%   \country{Taiwan}}
+\author{曾正豪 0716325}
+\affiliation{%
+  \institution{CS NYCU}
+  \city{Hsinchu}
+  \country{Taiwan}}
 
-% \author{王健業 0716098}
-% \affiliation{%
-%   \institution{CS NYCU}
-%   \city{Hsinchu}
-%   \country{Taiwan}}
+\author{王健業 0716098}
+\affiliation{%
+  \institution{CS NYCU}
+  \city{Hsinchu}
+  \country{Taiwan}}
 
-% \author{張宸愷 0710018}
-% \affiliation{%
-%   \institution{EECSHP NYCU}
-%   \city{Hsinchu}
-%   \country{Taiwan}}
-
-
-
+\author{張宸愷 0710018}
+\affiliation{%
+  \institution{EECSHP NYCU}
+  \city{Hsinchu}
+  \country{Taiwan}}
 
 %%
 %% By default, the full list of authors will be used in the page
@@ -141,7 +130,12 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-  This is the proposal for our final project. We planned to explore the many ways of parallelizing traditional single-threaded MCTS algorithms. 
+  A clear and well-documented \LaTeX\ document is presented as an
+  article formatted for publication by ACM in a conference proceedings
+  or journal publication. Based on the ``acmart'' document class, this
+  article presents and explains many of the common variations, as well
+  as many of the formatting elements an author may use in the
+  preparation of the documentation of their work.
 \end{abstract}
 
 %%
@@ -149,28 +143,28 @@
 %% Please copy and paste the code instead of the example below.
 %%
 \begin{CCSXML}
-<ccs2012>
- <concept>
+  <ccs2012>
+  <concept>
   <concept_id>10010520.10010553.10010562</concept_id>
   <concept_desc>Computer systems organization~Embedded systems</concept_desc>
   <concept_significance>500</concept_significance>
- </concept>
- <concept>
+  </concept>
+  <concept>
   <concept_id>10010520.10010575.10010755</concept_id>
   <concept_desc>Computer systems organization~Redundancy</concept_desc>
   <concept_significance>300</concept_significance>
- </concept>
- <concept>
+  </concept>
+  <concept>
   <concept_id>10010520.10010553.10010554</concept_id>
   <concept_desc>Computer systems organization~Robotics</concept_desc>
   <concept_significance>100</concept_significance>
- </concept>
- <concept>
+  </concept>
+  <concept>
   <concept_id>10003033.10003083.10003095</concept_id>
   <concept_desc>Networks~Network reliability</concept_desc>
   <concept_significance>100</concept_significance>
- </concept>
-</ccs2012>
+  </concept>
+  </ccs2012>
 \end{CCSXML}
 
 \ccsdesc[500]{Computer systems organization~Embedded systems}
@@ -181,15 +175,16 @@
 %%
 %% Keywords. The author(s) should pick words that accurately describe
 %% the work being presented. Separate the keywords with commas.
-\keywords{parallel programming, MCTS, MPI}
+\keywords{datasets, neural networks, gaze detection, text tagging}
 
 %% A "teaser" image appears between the author and affiliation
 %% information and the body of the document, and typically spans the
 %% page.
 \begin{teaserfigure}
-  \includegraphics[width=\textwidth]{sampleteaser.pdf}
-  \caption{Diagram for Monte-Carlo Tree Search}
-  \Description{A diagram for each step of MCTS.}
+  \includegraphics[width=\textwidth]{MCTS-steps.png}
+  \caption{Seattle Mariners at Spring Training, 2010.}
+  \Description{Enjoying the baseball game from the third-base
+    seats. Ichiro Suzuki preparing to bat.}
   \label{fig:teaser}
 \end{teaserfigure}
 
@@ -199,24 +194,119 @@
 \maketitle
 
 \section{Introduction}
+ACM's consolidated article template, introduced in 2017, provides a
+consistent \LaTeX\ style for use across ACM publications, and
+incorporates accessibility and metadata-extraction functionality
+necessary for future Digital Library endeavors. Numerous ACM and
+SIG-specific \LaTeX\ templates have been examined, and their unique
+features incorporated into this single new template.
 
+If you are new to publishing with ACM, this document is a valuable
+guide to the process of preparing your work for publication. If you
+have published with ACM before, this document provides insight and
+instruction into more recent changes to the article template.
 
-\section{Problem overview}
+The ``\verb|acmart|'' document class can be used to prepare articles
+for any ACM publication --- conference or journal, and for any stage
+of publication, from review to final ``camera-ready'' copy, to the
+author's own version, with {\itshape very} few changes to the source.
 
+\section{Template Overview}
+As noted in the introduction, the ``\verb|acmart|'' document class can
+be used to prepare many different kinds of documentation --- a
+double-blind initial submission of a full-length technical paper, a
+two-page SIGGRAPH Emerging Technologies abstract, a ``camera-ready''
+journal article, a SIGCHI Extended Abstract, and more --- all by
+selecting the appropriate {\itshape template style} and {\itshape
+    template parameters}.
 
-\section{Approaches}
+This document will explain the major features of the document
+class. For further information, the {\itshape \LaTeX\ User's Guide} is
+available from
+\url{https://www.acm.org/publications/proceedings-template}.
 
-\section{Language selection}
+\subsection{Template Styles}
 
-\section{Related work}
+The primary parameter given to the ``\verb|acmart|'' document class is
+the {\itshape template style} which corresponds to the kind of publication
+or SIG publishing the work. This parameter is enclosed in square
+brackets and is a part of the {\verb|documentclass|} command:
+\begin{verbatim}
+  \documentclass[STYLE]{acmart}
+\end{verbatim}
 
-\section{Expected results}
+Journals use one of three template styles. All but three ACM journals
+use the {\verb|acmsmall|} template style:
+\begin{itemize}
+  \item {\verb|acmsmall|}: The default journal template style.
+  \item {\verb|acmlarge|}: Used by JOCCH and TAP.
+  \item {\verb|acmtog|}: Used by TOG.
+\end{itemize}
 
-\section{Timeline}
+The majority of conference proceedings documentation will use the {\verb|acmconf|} template style.
+\begin{itemize}
+  \item {\verb|acmconf|}: The default proceedings template style.
+  \item{\verb|sigchi|}: Used for SIGCHI conference articles.
+  \item{\verb|sigchi-a|}: Used for SIGCHI ``Extended Abstract'' articles.
+  \item{\verb|sigplan|}: Used for SIGPLAN conference articles.
+\end{itemize}
 
+\subsection{Template Parameters}
 
+In addition to specifying the {\itshape template style} to be used in
+formatting your work, there are a number of {\itshape template parameters}
+which modify some part of the applied template style. A complete list
+of these parameters can be found in the {\itshape \LaTeX\ User's Guide.}
 
+Frequently-used parameters, or combinations of parameters, include:
+\begin{itemize}
+  \item {\verb|anonymous,review|}: Suitable for a ``double-blind''
+    conference submission. Anonymizes the work and includes line
+    numbers. Use with the \verb|\acmSubmissionID| command to print the
+    submission's unique ID on each page of the work.
+  \item{\verb|authorversion|}: Produces a version of the work suitable
+    for posting by the author.
+  \item{\verb|screen|}: Produces colored hyperlinks.
+\end{itemize}
 
+This document uses the following string as the first command in the
+source file:
+\begin{verbatim}
+\documentclass[sigconf]{acmart}
+\end{verbatim}
+
+\section{Modifications}
+
+Modifying the template --- including but not limited to: adjusting
+margins, typeface sizes, line spacing, paragraph and list definitions,
+and the use of the \verb|\vspace| command to manually adjust the
+vertical spacing between elements of your work --- is not allowed.
+
+  {\bfseries Your document will be returned to you for revision if
+    modifications are discovered.}
+
+\section{Typefaces}
+
+The ``\verb|acmart|'' document class requires the use of the
+``Libertine'' typeface family. Your \TeX\ installation should include
+this set of packages. Please do not substitute other typefaces. The
+``\verb|lmodern|'' and ``\verb|ltimes|'' packages should not be used,
+as they will override the built-in typeface families.
+
+\section{Title Information}
+
+The title of your work should use capital letters appropriately -
+\url{https://capitalizemytitle.com/} has useful rules for
+capitalization. Use the {\verb|title|} command to define the title of
+your work. If your work has a subtitle, define it with the
+  {\verb|subtitle|} command.  Do not insert line breaks in your title.
+
+If your title is lengthy, you must define a short version to be used
+in the page headers, to prevent overlapping text. The \verb|title|
+command has a ``short title'' parameter:
+\begin{verbatim}
+  \title[short title]{full title}
+\end{verbatim}
 
 \section{Authors and Affiliations}
 
@@ -269,9 +359,9 @@ document. When the document source is compiled, these commands and
 their parameters add formatted text to several areas of the final
 document:
 \begin{itemize}
-\item the ``ACM Reference Format'' text on the first page.
-\item the ``rights management'' text on the first page.
-\item the conference information in the page header(s).
+  \item the ``ACM Reference Format'' text on the first page.
+  \item the ``rights management'' text on the first page.
+  \item the conference information in the page header(s).
 \end{itemize}
 
 Rights information is unique to the work; if you are preparing several
@@ -340,14 +430,14 @@ this document.
   \label{tab:freq}
   \begin{tabular}{ccl}
     \toprule
-    Non-English or Math&Frequency&Comments\\
+    Non-English or Math & Frequency   & Comments          \\
     \midrule
-    \O & 1 in 1,000& For Swedish names\\
-    $\pi$ & 1 in 5& Common in math\\
-    \$ & 4 in 5 & Used in business\\
-    $\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
-  \bottomrule
-\end{tabular}
+    \O                  & 1 in 1,000  & For Swedish names \\
+    $\pi$               & 1 in 5      & Common in math    \\
+    \$                  & 4 in 5      & Used in business  \\
+    $\Psi^2_1$          & 1 in 40,000 & Unexplained usage \\
+    \bottomrule
+  \end{tabular}
 \end{table}
 
 To set a wider table, which takes up the whole width of the page's
@@ -364,11 +454,11 @@ in the printed output of this document.
   \label{tab:commands}
   \begin{tabular}{ccl}
     \toprule
-    Command &A Number & Comments\\
+    Command                    & A Number & Comments         \\
     \midrule
-    \texttt{{\char'134}author} & 100& Author \\
-    \texttt{{\char'134}table}& 300 & For tables\\
-    \texttt{{\char'134}table*}& 400& For wider tables\\
+    \texttt{{\char'134}author} & 100      & Author           \\
+    \texttt{{\char'134}table}  & 300      & For tables       \\
+    \texttt{{\char'134}table*} & 400      & For wider tables \\
     \bottomrule
   \end{tabular}
 \end{table*}
@@ -429,7 +519,14 @@ The ``\verb|figure|'' environment should be used for figures. One or
 more images can be placed within a figure. If your figure contains
 third-party material, you must clearly identify it as such, as shown
 in the example below.
-
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{sample-franklin}
+  \caption{1907 Franklin Model D roadster. Photograph by Harris \&
+    Ewing, Inc. [Public domain], via Wikimedia
+    Commons. (\url{https://goo.gl/VLCRBB}).}
+  \Description{A woman and a girl in white dresses sit in an open car.}
+\end{figure}
 
 Your figures should contain a caption which describes the figure to
 the reader.
@@ -443,9 +540,9 @@ indexing images, and when images cannot be loaded.
 
 A figure description must be unformatted plain text less than 2000
 characters long (including spaces).  {\bfseries Figure descriptions
-  should not repeat the figure caption – their purpose is to capture
-  important information that is not already provided in the caption or
-  the main text of the paper.} For figures that convey important and
+    should not repeat the figure caption – their purpose is to capture
+    important information that is not already provided in the caption or
+    the main text of the paper.} For figures that convey important and
 complex new information, a short text description may not be
 adequate. More complex alternative descriptions can be placed in an
 appendix and referenced in a short figure description. For example,
@@ -497,36 +594,36 @@ command in the {\bfseries preamble} (before the command
   \citestyle{acmauthoryear}
 \end{verbatim}
 
-  Some examples.  A paginated journal article \cite{Abril07}, an
-  enumerated journal article \cite{Cohen07}, a reference to an entire
-  issue \cite{JCohen96}, a monograph (whole book) \cite{Kosiur01}, a
-  monograph/whole book in a series (see 2a in spec. document)
-  \cite{Harel79}, a divisible-book such as an anthology or compilation
-  \cite{Editor00} followed by the same example, however we only output
-  the series if the volume number is given \cite{Editor00a} (so
-  Editor00a's series should NOT be present since it has no vol. no.),
-  a chapter in a divisible book \cite{Spector90}, a chapter in a
-  divisible book in a series \cite{Douglass98}, a multi-volume work as
-  book \cite{Knuth97}, a couple of articles in a proceedings (of a
-  conference, symposium, workshop for example) (paginated proceedings
-  article) \cite{Andler79, Hagerup1993}, a proceedings article with
-  all possible elements \cite{Smith10}, an example of an enumerated
-  proceedings article \cite{VanGundy07}, an informally published work
-  \cite{Harel78}, a couple of preprints \cite{Bornmann2019,
-    AnzarootPBM14}, a doctoral dissertation \cite{Clarkson85}, a
-  master's thesis: \cite{anisi03}, an online document / world wide web
-  resource \cite{Thornburg01, Ablamowicz07, Poker06}, a video game
-  (Case 1) \cite{Obama08} and (Case 2) \cite{Novak03} and \cite{Lee05}
-  and (Case 3) a patent \cite{JoeScientist001}, work accepted for
-  publication \cite{rous08}, 'YYYYb'-test for prolific author
-  \cite{SaeediMEJ10} and \cite{SaeediJETC10}. Other cites might
-  contain 'duplicate' DOI and URLs (some SIAM articles)
-  \cite{Kirschmer:2010:AEI:1958016.1958018}. Boris / Barbara Beeton:
-  multi-volume works as books \cite{MR781536} and \cite{MR781537}. A
-  couple of citations with DOIs:
-  \cite{2004:ITE:1009386.1010128,Kirschmer:2010:AEI:1958016.1958018}. Online
-  citations: \cite{TUGInstmem, Thornburg01, CTANacmart}. Artifacts:
-  \cite{R} and \cite{UMassCitations}.
+Some examples.  A paginated journal article \cite{Abril07}, an
+enumerated journal article \cite{Cohen07}, a reference to an entire
+issue \cite{JCohen96}, a monograph (whole book) \cite{Kosiur01}, a
+monograph/whole book in a series (see 2a in spec. document)
+\cite{Harel79}, a divisible-book such as an anthology or compilation
+\cite{Editor00} followed by the same example, however we only output
+the series if the volume number is given \cite{Editor00a} (so
+Editor00a's series should NOT be present since it has no vol. no.),
+a chapter in a divisible book \cite{Spector90}, a chapter in a
+divisible book in a series \cite{Douglass98}, a multi-volume work as
+book \cite{Knuth97}, a couple of articles in a proceedings (of a
+conference, symposium, workshop for example) (paginated proceedings
+article) \cite{Andler79, Hagerup1993}, a proceedings article with
+all possible elements \cite{Smith10}, an example of an enumerated
+proceedings article \cite{VanGundy07}, an informally published work
+\cite{Harel78}, a couple of preprints \cite{Bornmann2019,
+  AnzarootPBM14}, a doctoral dissertation \cite{Clarkson85}, a
+master's thesis: \cite{anisi03}, an online document / world wide web
+resource \cite{Thornburg01, Ablamowicz07, Poker06}, a video game
+(Case 1) \cite{Obama08} and (Case 2) \cite{Novak03} and \cite{Lee05}
+and (Case 3) a patent \cite{JoeScientist001}, work accepted for
+publication \cite{rous08}, 'YYYYb'-test for prolific author
+\cite{SaeediMEJ10} and \cite{SaeediJETC10}. Other cites might
+contain 'duplicate' DOI and URLs (some SIAM articles)
+\cite{Kirschmer:2010:AEI:1958016.1958018}. Boris / Barbara Beeton:
+multi-volume works as books \cite{MR781536} and \cite{MR781537}. A
+couple of citations with DOIs:
+\cite{2004:ITE:1009386.1010128,Kirschmer:2010:AEI:1958016.1958018}. Online
+citations: \cite{TUGInstmem, Thornburg01, CTANacmart}. Artifacts:
+\cite{R} and \cite{UMassCitations}.
 
 \section{Acknowledgments}
 
@@ -552,7 +649,7 @@ Authors should not prepare this section as a numbered or unnumbered {\verb|\sect
 
 If your work needs an appendix, add it before the
 ``\verb|\end{document}|'' command at the conclusion of your source
-``document''.
+document.
 
 Start the appendix with the ``\verb|appendix|'' command:
 \begin{verbatim}
@@ -570,9 +667,9 @@ a wide left margin. Three environments are available for use with the
 ``\verb|sigchi-a|'' template style, and produce formatted output in
 the margin:
 \begin{itemize}
-\item {\verb|sidebar|}:  Place formatted text in the margin.
-\item {\verb|marginfigure|}: Place a figure in the margin.
-\item {\verb|margintable|}: Place a table in the margin.
+  \item {\verb|sidebar|}:  Place formatted text in the margin.
+  \item {\verb|marginfigure|}: Place a figure in the margin.
+  \item {\verb|margintable|}: Place a table in the margin.
 \end{itemize}
 
 %%
@@ -581,19 +678,50 @@ the margin:
 %% identification of the section in the article metadata, and the
 %% consistent spelling of the heading.
 \begin{acks}
-To Robert, for the bagels and explaining CMYK and color spaces.
+  To Robert, for the bagels and explaining CMYK and color spaces.
 \end{acks}
 
 %%
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
 \bibliographystyle{ACM-Reference-Format}
-\bibliography{sample-base.bib}
+\bibliography{sample-base}
 
+%%
+%% If your work has an appendix, this is the place to put it.
+\appendix
+
+\section{Research Methods}
+
+\subsection{Part One}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+malesuada, quam in pulvinar varius, metus nunc fermentum urna, id
+sollicitudin purus odio sit amet enim. Aliquam ullamcorper eu ipsum
+vel mollis. Curabitur quis dictum nisl. Phasellus vel semper risus, et
+lacinia dolor. Integer ultricies commodo sem nec semper.
+
+\subsection{Part Two}
+
+Etiam commodo feugiat nisl pulvinar pellentesque. Etiam auctor sodales
+ligula, non varius nibh pulvinar semper. Suspendisse nec lectus non
+ipsum convallis congue hendrerit vitae sapien. Donec at laoreet
+eros. Vivamus non purus placerat, scelerisque diam eu, cursus
+ante. Etiam aliquam tortor auctor efficitur mattis.
+
+\section{Online Resources}
+
+Nam id fermentum dui. Suspendisse sagittis tortor a nulla mollis, in
+pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
+enim maximus. Vestibulum gravida massa ut felis suscipit
+congue. Quisque mattis elit a risus ultrices commodo venenatis eget
+dui. Etiam sagittis eleifend elementum.
+
+Nam interdum magna at lectus dignissim, ac dignissim lorem
+rhoncus. Maecenas eu arcu ac neque placerat aliquam. Nunc pulvinar
+massa et mattis lacinia.
 
 \end{document}
 \endinput
-
-
 %%
-%% End of file `sample-acmsmall-conf.tex'.
+%% End of file `sample-sigconf.tex'.
