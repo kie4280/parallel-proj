@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.22)  22 OCT 2021 03:55
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.22)  24 OCT 2021 07:23
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1076,7 +1076,7 @@ Package fontspec Info: Font family '[NotoSansTC-Regular.otf](0)' created for
 (fontspec)             <->"[NotoSansTC-Regular]/BI.otf/OT:script=hani;language=dflt;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
-Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 89.
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 91.
 \c@theorem=\count333
  (/usr/local/texlive/2021/texmf-dist/tex/latex/preprint/balance.sty
 Package: balance 1999/02/23 4.3 (PWD)
@@ -1084,55 +1084,55 @@ Package: balance 1999/02/23 4.3 (PWD)
 ) Excluding comment 'screenonly' Include comment 'printonly' Include comment 'anonsuppress' (./proposal.aux)
 \openout1 = `proposal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 89.
-LaTeX Font Info:    Trying to load font information for OML+nxlmi on input line 89.
+LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 91.
+LaTeX Font Info:    Trying to load font information for OML+nxlmi on input line 91.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/newtx/omlnxlmi.fd
 File: omlnxlmi.fd 2013/11/19 Fontinst v1.933 font definitions for OML/nxlmi.
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 89.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 91.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 89.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 89.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 91.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 91.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 89.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 89.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 91.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 91.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 89.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 89.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 91.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 91.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    ... okay on input line 91.
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 89.
+(Font)              scaled to size 7.0pt on input line 91.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
-LaTeX Font Info:    Trying to load font information for OT1+minlibertine on input line 89.
+LaTeX Font Info:    Trying to load font information for OT1+minlibertine on input line 91.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/newtx/ot1minlibertine.fd
 File: ot1minlibertine.fd 2013/10/12 v1.0
 )
@@ -1152,7 +1152,7 @@ Requested font "ntxexx" at 7.3pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexx.tfm
 Requested font "ntxexx" at 5.5pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexx.tfm
-LaTeX Font Info:    Trying to load font information for U+msa on input line 89.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 91.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -1160,7 +1160,7 @@ Requested font "msam7" at 7.3pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 Requested font "msam5" at 5.5pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
-LaTeX Font Info:    Trying to load font information for U+msb on input line 89.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 91.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -1168,7 +1168,7 @@ Requested font "msbm7" at 7.3pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 Requested font "msbm5" at 5.5pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 89.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 91.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
@@ -1176,7 +1176,7 @@ Requested font "nxlmia" at 7.3pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/nxlmia.tfm
 Requested font "nxlmia" at 5.5pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/nxlmia.tfm
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 89.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 91.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
@@ -1184,7 +1184,7 @@ Requested font "ntxsym" at 7.3pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsym.tfm
 Requested font "ntxsym" at 5.5pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsym.tfm
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 89.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 91.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
@@ -1196,7 +1196,7 @@ Requested font "ntxexa" at 7.3pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 Requested font "ntxexa" at 5.5pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
-LaTeX Info: Redefining \microtypecontext on input line 89.
+LaTeX Info: Redefining \microtypecontext on input line 91.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -1206,7 +1206,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LinLibertine' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package hyperref Info: Link coloring OFF on input line 89.
+Package hyperref Info: Link coloring OFF on input line 91.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
@@ -1214,9 +1214,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count334
 )
-LaTeX Info: Redefining \ref on input line 89.
-LaTeX Info: Redefining \pageref on input line 89.
-LaTeX Info: Redefining \nameref on input line 89.
+LaTeX Info: Redefining \ref on input line 91.
+LaTeX Info: Redefining \pageref on input line 91.
+LaTeX Info: Redefining \nameref on input line 91.
  (./proposal.out) (./proposal.out)
 \@outlinefile=\write4
 \openout4 = `proposal.out'.
@@ -1260,7 +1260,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 161.
+(Font)              scaled to size 17.28pt on input line 165.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 17.28pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
 
@@ -1269,7 +1269,7 @@ Package xeCJK Warning: Unknown CJK family `\CJKsfdefault' is being ignored.
 (xeCJK)                Try to use `\setCJKsansfont[...]{...}' to define it.
 
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 161.
+(Font)              scaled to size 17.28pt on input line 165.
 Requested font "[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 17.28pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R.otf
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1277,45 +1277,45 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/b/n' will be
-(Font)              scaled to size 17.28pt on input line 161.
+(Font)              scaled to size 17.28pt on input line 165.
 Requested font "[LinBiolinum_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 17.28pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_RB.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 161.
+(Font)              scaled to size 12.0pt on input line 165.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 12.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
 Requested font "[NotoSansTC-Regular].otf/OT:script=hani;language=dflt;" at 12.0pt
  -> ./NotoSansTC-Regular.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 161.
+(Font)              scaled to size 10.0pt on input line 165.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 10.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
 File: MCTS-steps.png Graphic file (type bmp)
 <MCTS-steps.png>
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
-(Font)              scaled to size 9.0pt on input line 161.
+(Font)              scaled to size 9.0pt on input line 165.
 Requested font "[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RB.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
-(Font)              scaled to size 7.0pt on input line 161.
+(Font)              scaled to size 7.0pt on input line 165.
 Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RI.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
-(Font)              scaled to size 10.95pt on input line 161.
+(Font)              scaled to size 10.95pt on input line 165.
 Requested font "[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 10.95pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RB.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 161.
+(Font)              scaled to size 8.0pt on input line 165.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 8.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
-(Font)              scaled to size 8.0pt on input line 161.
+(Font)              scaled to size 8.0pt on input line 165.
 Requested font "[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 8.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RB.otf
 Requested font "[NotoSansTC-Regular].otf/OT:script=hani;language=dflt;" at 8.0pt
  -> ./NotoSansTC-Regular.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
-(Font)              scaled to size 8.0pt on input line 161.
+(Font)              scaled to size 8.0pt on input line 165.
 Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 8.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RI.otf
 Requested font "MinLibReg-ot1" at 8.0pt
@@ -1377,11 +1377,7 @@ Requested font "ntxexa" at 8.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 Requested font "ntxexa" at 6.2pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
-
-Overfull \hbox (2.37189pt too wide) in paragraph at lines 161--161
-\TU/LinLibertine(0)/m/it/8 ence’17). \TU/LinLibertine(0)/m/n/8 ACM, New York, NY, USA, []5[] pages. []$[][][][][] [] [] [] [][][] [] [][][] [] [][] [] [][][][] [] [][][][][][][] []
- []
-
+ (./proposal.bbl)
 Requested font "MinLibReg-ot1" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/MinLibReg-ot1.tfm
 Package microtype Info: Character `AE ' is missing
@@ -1408,125 +1404,9 @@ Requested font "ntxsyc" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 Requested font "ntxexa" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 7.3pt on input line 165.
-Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.3pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
 
-Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
-(xeCJK)                
-(xeCJK)                Try to use `\setCJKmonofont[...]{...}' to define it.
-
-Requested font "[Inconsolatazi4-Regular.otf]/OT:script=latn;language=dflt;+ss03;" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/inconsolata/Inconsolatazi4-Regular.otf
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `inconsolata' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
-(Font)              scaled to size 9.0pt on input line 179.
-Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RI.otf
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
-(Font)              scaled to size 7.3pt on input line 191.
-Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.3pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RI.otf
-Requested font "[NotoSansTC-Regular].otf/OT:script=hani;language=dflt;" at 9.0pt
- -> ./NotoSansTC-Regular.otf
-[1.1
-
-]
-Overfull \hbox (2.23755pt too wide) in paragraph at lines 230--234
-[][][]\TU/inconsolata(0)/m/n/9 anonymous,review[]\TU/LinLibertine(0)/m/n/9 : Suitable for a “double-blind” conference
- []
-
-
-Overfull \hbox (6.94928pt too wide) in paragraph at lines 280--284
-\TU/LinLibertine(0)/m/n/9 tification. Multiple authors may share one affiliation. Authors’ names
- []
-
-LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 362.
-Requested font "[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R.otf
-LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 362.
-Requested font "[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R.otf
-[2.2]
-Overfull \hbox (7.85179pt too wide) in paragraph at lines 364--368
-\TU/LinLibertine(0)/m/n/9 Your work should use standard L[]T[]X sectioning commands: [][]\TU/inconsolata(0)/m/n/9 section[]\TU/LinLibertine(0)/m/n/9 ,
- []
-
-
-Overfull \hbox (2.30553pt too wide) in paragraph at lines 364--368
-[][]\TU/inconsolata(0)/m/n/9 subsection[]\TU/LinLibertine(0)/m/n/9 , [][]\TU/inconsolata(0)/m/n/9 subsubsection[]\TU/LinLibertine(0)/m/n/9 , and [][]\TU/inconsolata(0)/m/n/9 paragraph[]\TU/LinLibertine(0)/m/n/9 . They should be num-
- []
-
-
-Underfull \vbox (badness 3291) has occurred while \output is active []
-
-Requested font "[NotoSansTC-Regular]/B.otf/OT:script=hani;language=dflt;" at 9.0pt
- -> ./NotoSansTC-Regular.otf
-
-Overfull \hbox (9.5758pt too wide) in paragraph at lines 501--514
-\TU/LinLibertine(0)/m/n/9 2000 characters long (including spaces). \TU/LinLibertine(0)/b/n/9 Figure descriptions should
- []
-
-[3.3]
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/sc' will be
-(Font)              scaled to size 9.0pt on input line 532.
-Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;" at 9.0pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
-
-Overfull \hbox (1.29532pt too wide) in paragraph at lines 539--541
-[]\TU/LinLibertine(0)/m/n/9 The bibliography is included in your source document with these
- []
-
-
-Overfull \hbox (18.1033pt too wide) in paragraph at lines 548--553
-\TU/LinLibertine(0)/m/n/9 command in the \TU/LinLibertine(0)/b/n/9 preamble \TU/LinLibertine(0)/m/n/9 (before the command “[][]\TU/inconsolata(0)/m/n/9 \begin{document}[]\TU/LinLibertine(0)/m/n/9 ”)
- []
-
-
-Overfull \hbox (4.73006pt too wide) in paragraph at lines 610--613
-\TU/LinLibertine(0)/m/n/9 If your work needs an appendix, add it before the “[][]\TU/inconsolata(0)/m/n/9 \end{document}[]\TU/LinLibertine(0)/m/n/9 ”
- []
-
-Processing 'acks' comment.
-\openout3 = `comment.cut'.
-
- Comment 'acks' writing to comment.cut. Straight input of comment.cut. (./comment.cut) (./proposal.bbl [4.4]
-LaTeX Info: Redefining \tempurl on input line 64.
-LaTeX Info: Redefining \tempurl on input line 79.
-LaTeX Info: Redefining \tempurl on input line 102.
-LaTeX Info: Redefining \tempurl on input line 168.
-LaTeX Info: Redefining \tempurl on input line 188.
-LaTeX Info: Redefining \tempurl on input line 203.
-LaTeX Info: Redefining \tempurl on input line 217.
-LaTeX Info: Redefining \tempurl on input line 274.
-LaTeX Info: Redefining \tempurl on input line 321.
-LaTeX Info: Redefining \tempurl on input line 338.
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
-(Font)              scaled to size 5.5pt on input line 367.
-Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 5.5pt
- -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RI.otf
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \tempurl on input line 383.
-LaTeX Info: Redefining \tempurl on input line 397.
-LaTeX Info: Redefining \tempurl on input line 409.
-LaTeX Info: Redefining \tempurl on input line 422.
-LaTeX Info: Redefining \tempurl on input line 436.
-LaTeX Info: Redefining \tempurl on input line 506.
-LaTeX Info: Redefining \tempurl on input line 521.
-LaTeX Info: Redefining \tempurl on input line 532.
-LaTeX Info: Redefining \tempurl on input line 544.
-LaTeX Info: Redefining \tempurl on input line 557.
-)
-Overfull \hbox (1.8398pt too wide) in paragraph at lines 658--663
-\TU/LinLibertine(0)/m/n/9 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi male-
+Overfull \hbox (11.58946pt too wide) in paragraph at lines 211--212
+[]\TU/LinLibertine(0)/m/n/9 Monte Carlo tree search ([]$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][] [] [][][][] [] [][][][][] []
  []
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
@@ -1535,23 +1415,22 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 File: se-utf32be.def 2019/11/29 v1.12 stringenc: UTF-32BE
 )
 
-Class acmart Warning: CCS concepts are mandatory for papers over two pages.
-
-
 Package balance Warning: You have called \balance in second column
 (balance)                Columns might not be balanced.
 
-[5.5] (./proposal.aux)
+[1.1
+
+] (./proposal.aux)
 Package rerunfilecheck Info: File `proposal.out' has not changed.
-(rerunfilecheck)             Checksum: E966C0BDB270F50D1C271DC1EF8F63A4;4126.
+(rerunfilecheck)             Checksum: 86CF772535FBEAFBB7A66126672087A6;1498.
  ) 
 Here is how much of TeX's memory you used:
- 31267 strings out of 476473
- 611489 string characters out of 5816481
- 1018329 words of memory out of 5000000
- 51092 multiletter control sequences out of 15000+600000
- 431203 words of font info for 153 fonts, out of 8000000 for 9000
+ 31060 strings out of 476473
+ 605634 string characters out of 5816481
+ 983708 words of memory out of 5000000
+ 50902 multiletter control sequences out of 15000+600000
+ 431009 words of font info for 143 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
  103i,11n,131p,893b,32772s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on proposal.xdv (5 pages, 327076 bytes).
+Output written on proposal.xdv (1 page, 57548 bytes).
