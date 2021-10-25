@@ -133,7 +133,7 @@
 %% article.
 \begin{abstract}
   A project proposal for the course `Parallel Programming Fall 2021'.
-  We decided to explore the parallelization of MCTS using the techniques and knowledge we have learned in this course. We will use quantitative benchmarks to compare different approaches to solve this kind of parallelization. 
+  We decided to explore the parallelization of Monte Carlo Tree Search using the techniques and knowledge we have learned in this course. We will use quantitative benchmarks to compare different approaches to solve this kind of parallelization. 
 \end{abstract}
 
 %%
@@ -154,7 +154,7 @@
 %% page.
 \begin{teaserfigure}
   \includegraphics[width=\textwidth]{MCTS-steps.png}
-  \caption{Illustration of a single step of MCTS}
+  \caption{Illustration for a single step of MCTS}
   \Description{The workings of MCTS}
 \label{fig:teaser}
 \end{teaserfigure}
@@ -165,17 +165,20 @@
 \maketitle
 
 \section{Introduction}
-One of the most famous applications of MCTS is AlphaGO. It uses Monte Carlo tree search with 2 other neural networks to play Go. An early version of AlphaGo was tested on hardware with various numbers of CPUs and GPUs, running in asynchronous or distributed mode. It was tested with search threads from 12 to 64, number of CPUs from 48 to 1920, and number of GPUs from 1 to 280. And in 2016, it changed to use TPUs (tensor processing units) as its computing unit. In recent years, it keeps beating many go players. Overall, MCTS is an algorithm that can be highly parallelized. Hence, we decided to use MCTS as the topic of our final project.
+`Monte Carlo Tree Search', abbreviated in this text from now on as MCTS, is a probability based tree search method for many applications. 
+One of the most famous application of MCTS is AlphaGO. It uses MCTS with 2 other neural networks to play Go. An early version of AlphaGo was tested on hardware with various numbers of CPUs and GPUs, running in asynchronous or distributed mode. It was tested with search threads from 12 to 64, number of CPUs from 48 to 1920, and number of GPUs from 1 to 280. And in 2016, it changed to use TPUs (tensor processing units) as its computing unit. In recent years, it keeps beating many go players. Overall, MCTS is an algorithm that can be highly parallelized because of the high number of simulations. Hence, we decided to use MCTS as the topic of our final project.
 
 \section{Statement of problem}
+One of our teammates had taken the course AI capstone, and during that course he had been doing a final project about playing a 3D-version of connect4 using MCTS. He noticed that when he uses root parallelization, the performance of the MCTS decreases dramatically. The multithreaded version didn’t even manage to beat the single threaded one. Thus, we want to explore further on why it didn’t perform better and try to improve the multithreaded performance. 
 
 \section{Proposed approaches}
 
 \section{Language selection}
+We will use C++ as our main programming language, together with Pthreads and CUDA.
 
 \section{Related work}
 
-A pretty detailed work~\cite{liu2020effective}. Different methods for enhancing the capability of MCTS on board games were explored in~\cite{weigel2017monte}. It also outlined some of the parallelization techniques for MCTS.
+A pretty detailed work~\cite{liu2020effective}. Different methods for enhancing the capability of MCTS on board games were explored in~\cite{weigel2017monte}. It also outlined some of the parallelization techniques for MCTS, root parallelization, leaf parallelization, etc.
 
 \section{Expected results}
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.22)  25 OCT 2021 05:26
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.22)  25 OCT 2021 07:38
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1304,6 +1304,21 @@ LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
 (Font)              scaled to size 10.95pt on input line 165.
 Requested font "[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 10.95pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RB.otf
+
+Overfull \hbox (4.6033pt too wide) in paragraph at lines 165--165
+\TU/LinLibertine(0)/m/n/9 We decided to explore the parallelization of Monte Carlo Tree Search
+ []
+
+
+Overfull \hbox (1.5343pt too wide) in paragraph at lines 165--165
+\TU/LinLibertine(0)/m/n/9 using the techniques and knowledge we have learned in this course.
+ []
+
+
+Overfull \hbox (9.40628pt too wide) in paragraph at lines 165--165
+\TU/LinLibertine(0)/m/n/9 We will use quantitative benchmarks to compare different approaches
+ []
+
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
 (Font)              scaled to size 8.0pt on input line 165.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 8.0pt
@@ -1382,7 +1397,14 @@ Overfull \hbox (2.37189pt too wide) in paragraph at lines 165--165
 \TU/LinLibertine(0)/m/it/8 ence’17). \TU/LinLibertine(0)/m/n/8 ACM, New York, NY, USA, []2[] pages. []$[][][][][] [] [] [] [][][] [] [][][] [] [][] [] [][][][] [] [][][][][][][] []
  []
 
-(./proposal.bbl)
+Requested font "[NotoSansTC-Regular].otf/OT:script=hani;language=dflt;" at 9.0pt
+ -> ./NotoSansTC-Regular.otf
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1.1
+
+] (./proposal.bbl)
 Requested font "MinLibReg-ot1" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/MinLibReg-ot1.tfm
 Package microtype Info: Character `AE ' is missing
@@ -1410,28 +1432,21 @@ Requested font "ntxsyc" at 9.0pt
 Requested font "ntxexa" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 
-Overfull \hbox (11.58946pt too wide) in paragraph at lines 211--212
+Overfull \hbox (11.58946pt too wide) in paragraph at lines 214--215
 []\TU/LinLibertine(0)/m/n/9 Monte Carlo tree search ([]$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][] [] [][][][] [] [][][][][] []
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1.1
-
-] (/usr/local/texlive/2021/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+(/usr/local/texlive/2021/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 ) (/usr/local/texlive/2021/texmf-dist/tex/generic/stringenc/se-utf32be.def
 File: se-utf32be.def 2019/11/29 v1.12 stringenc: UTF-32BE
 )
-Overfull \vbox (1.73949pt too high) has occurred while \output is active []
-
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 215.
+(Font)              scaled to size 9.0pt on input line 218.
 Requested font "[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R.otf
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 215.
+(Font)              scaled to size 7.0pt on input line 218.
 Requested font "[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R.otf
 Requested font "[NotoSansTC-Regular].otf/OT:script=hani;language=dflt;" at 7.0pt
@@ -1441,12 +1456,12 @@ Package rerunfilecheck Info: File `proposal.out' has not changed.
 (rerunfilecheck)             Checksum: 86CF772535FBEAFBB7A66126672087A6;1498.
  ) 
 Here is how much of TeX's memory you used:
- 31072 strings out of 476473
- 606098 string characters out of 5816481
- 977628 words of memory out of 5000000
- 50911 multiletter control sequences out of 15000+600000
- 431033 words of font info for 146 fonts, out of 8000000 for 9000
+ 31086 strings out of 476473
+ 607083 string characters out of 5816481
+ 980903 words of memory out of 5000000
+ 50924 multiletter control sequences out of 15000+600000
+ 431041 words of font info for 147 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
  103i,11n,131p,893b,32772s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on proposal.xdv (2 pages, 63212 bytes).
+Output written on proposal.xdv (2 pages, 70880 bytes).
