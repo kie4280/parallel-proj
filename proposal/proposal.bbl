@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{1}
+\begin{thebibliography}{2}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -48,6 +48,17 @@
 \newblock
 \newblock
 \showeprint[arxiv]{2006.08785}~[cs.LG]
+
+
+\bibitem[\protect\citeauthoryear{Weigel}{Weigel}{2017}]%
+        {weigel2017monte}
+\bibfield{author}{\bibinfo{person}{Martin Weigel}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \bibinfo{title}{Monte Carlo methods for massively parallel
+  computers}.
+\newblock
+\newblock
+\showeprint[arxiv]{1709.04394}~[physics.comp-ph]
 
 
 \end{thebibliography}
