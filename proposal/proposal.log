@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.22)  26 OCT 2021 06:59
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.22)  26 OCT 2021 14:37
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1397,7 +1397,19 @@ Requested font "ntxexa" at 6.2pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 Requested font "[NotoSansTC-Regular].otf/OT:script=hani;language=dflt;" at 9.0pt
  -> ./NotoSansTC-Regular.otf
- [1.1
+
+Overfull \hbox (3.53757pt too wide) in paragraph at lines 172--173
+\TU/LinLibertine(0)/m/n/9 There are four ways to parallelize traditional UCB-MCTS mentioned
+ []
+
+File: MCTS-parallel.png Graphic file (type bmp)
+<MCTS-parallel.png>
+
+Overfull \hbox (1.20685pt too wide) in paragraph at lines 180--181
+[]\TU/LinLibertine(0)/m/n/9 Leaf parallelization, root parallelization, tree parallelization with
+ []
+
+[1.1
 
 ] (./proposal.bbl)
 Requested font "MinLibReg-ot1" at 9.0pt
@@ -1427,11 +1439,11 @@ Requested font "ntxsyc" at 9.0pt
 Requested font "ntxexa" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 7.3pt on input line 208.
+(Font)              scaled to size 7.3pt on input line 217.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.3pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 5.5pt on input line 208.
+(Font)              scaled to size 5.5pt on input line 217.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 5.5pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
  (/usr/local/texlive/2021/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
@@ -1440,26 +1452,26 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 File: se-utf32be.def 2019/11/29 v1.12 stringenc: UTF-32BE
 )
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 212.
+(Font)              scaled to size 9.0pt on input line 221.
 Requested font "[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R.otf
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 212.
+(Font)              scaled to size 7.0pt on input line 221.
 Requested font "[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R.otf
 Requested font "[NotoSansTC-Regular].otf/OT:script=hani;language=dflt;" at 7.0pt
  -> ./NotoSansTC-Regular.otf
  [2.2] (./proposal.aux)
 Package rerunfilecheck Info: File `proposal.out' has not changed.
-(rerunfilecheck)             Checksum: 29AF75631BE5F159D28BAC78DCECECEC;1366.
+(rerunfilecheck)             Checksum: 6A1BB918F698F0CA6F2CDD360866BF81;1366.
  ) 
 Here is how much of TeX's memory you used:
- 31109 strings out of 476473
- 607735 string characters out of 5816481
- 982140 words of memory out of 5000000
- 50941 multiletter control sequences out of 15000+600000
+ 31122 strings out of 476473
+ 607998 string characters out of 5816481
+ 977705 words of memory out of 5000000
+ 50953 multiletter control sequences out of 15000+600000
  431171 words of font info for 149 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
  103i,11n,131p,893b,32772s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on proposal.xdv (2 pages, 71796 bytes).
+Output written on proposal.xdv (2 pages, 76116 bytes).

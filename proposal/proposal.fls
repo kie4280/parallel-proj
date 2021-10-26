@@ -1194,6 +1194,9 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
+INPUT ./MCTS-parallel.png
+INPUT ./MCTS-parallel.png
+INPUT MCTS-parallel.png
 OUTPUT proposal.xdv
 INPUT ./proposal.bbl
 INPUT proposal.bbl

@@ -84,6 +84,7 @@
 \usepackage{xeCJK}
 \setCJKmainfont{[NotoSansTC-Regular.otf]}
 \usepackage{hyperref}
+\usepackage{xurl}
 
 
 %%
@@ -102,23 +103,19 @@
 %% "authornote" and "authornotemark" commands
 %% used to denote shared contribution to the research.
 
+\author{張宸愷 0710018}
+\affiliation{%
+  \institution{EECSHP NYCU}
+  \city{Hsinchu}
+  \country{Taiwan}}
+
 \author{曾正豪 0716325}
 \affiliation{%
   \institution{CS NYCU}
   \city{Hsinchu}
   \country{Taiwan}}
 
-\author{王健業 0716098}
-\affiliation{%
-  \institution{CS NYCU}
-  \city{Hsinchu}
-  \country{Taiwan}}
 
-\author{張宸愷 0710018}
-\affiliation{%
-  \institution{EECSHP NYCU}
-  \city{Hsinchu}
-  \country{Taiwan}}
 
 %%
 %% By default, the full list of authors will be used in the page
@@ -126,14 +123,14 @@
 %% other information printed in the page headers. This command allows
 %% the author to define a more concise list
 %% of authors' names for this purpose.
-\renewcommand{\shortauthors}{Trovato and Tobin, et al.}
+% \renewcommand{\shortauthors}{Trovato and Tobin, et al.}
 
 %%
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
   A project proposal for the course `Parallel Programming Fall 2021'.
-  We decide to explore the parallelization of MCTS.
+  We decided to explore the parallelization of Monte Carlo Tree Search using the techniques and knowledge we have learned in this course. We will use quantitative benchmarks to compare different approaches to solve this kind of parallelization. 
 \end{abstract}
 
 %%
@@ -154,7 +151,7 @@
 %% page.
 \begin{teaserfigure}
   \includegraphics[width=\textwidth]{MCTS-steps.png}
-  \caption{Illustration of a single step of MCTS}
+  \caption{Illustration for a single step of MCTS}
   \Description{The workings of MCTS}
 \label{fig:teaser}
 \end{teaserfigure}
@@ -165,88 +162,42 @@
 \maketitle
 
 \section{Introduction}
-One of the most famous applications of MCTS is AlphaGO. 
-It uses Monte Carlo tree search with 2 other neural networks to play Go. An early version of AlphaGo was tested on hardware with various numbers of CPUs and GPUs, running in asynchronous or distributed mode. It was tested with search threads from 12 to 64, number of CPU from 48 to 1920, and number of GPU from 1 to 280. And in 2016, it changed to use TPU(tensor processing units) as its computing unit. In recent years, it keeps beating many go players. Overall, MCTS is an algorithm that can be highly parallelized. Hence, we decided to use MCTS as the topic of our final project.
+`Monte Carlo Tree Search', abbreviated in this text from now on as MCTS, is a probability based tree search method for many applications. 
+One of the most famous application of MCTS is AlphaGO. It uses MCTS with 2 other neural networks to play Go. An early version of AlphaGo was tested on hardware with various numbers of CPUs and GPUs, running in asynchronous or distributed mode. It was tested with search threads from 12 to 64, number of CPUs from 48 to 1920, and number of GPUs from 1 to 280. And in 2016, it changed to use TPUs (tensor processing units) as its computing unit. In recent years, it keeps beating many go players. Overall, MCTS is an algorithm that can be highly parallelized because of the high number of simulations. Hence, we decided to use MCTS as the topic of our final project.
+
+\section{Statement of problem}
+One of our teammates had taken the course AI capstone, and during that course he had been doing a final project about playing a 3D version of connect-4 using UCB-MCTS. He noticed that when he uses root parallelization, the performance of the MCTS decreases dramatically. The multithreaded version with 8 threads didn’t even manage to beat the single threaded one. Thus, we want to explore further on why it didn’t perform better and try to improve the multithreaded performance. 
+
+\section{Proposed approaches}
+There are four ways to parallelize traditional UCB-MCTS mentioned in \cite{guillaumeMCTS}. Leaf parallelization, root parallelization, tree parallelization with global mutex, and tree parallelization with local mutex. 
+
+\begin{figure}[H]
+  \includegraphics[width=8.5cm]{MCTS-parallel.png}
+  \caption{Ways of parallelizing MCTS}
+  \Description{Parallel MCTS}
+\label{fig:mcts_parallel}
+\end{figure}
+
+\section{Language selection}
+We will use C++ as our main programming language, together with Pthreads and CUDA. Since we want to compare the performance of CPU and GPU on parallel programs.
+
+
+\section{Related work}
+
+A pretty detailed work~\cite{liu2020effective}. Different methods for enhancing the capability of MCTS on board games were explored in~\cite{weigel2017monte}. \cite{weigel2017monte}\cite{guillaumeMCTS} also outlined some of the parallelization techniques for MCTS, root parallelization, leaf parallelization, and tree parallelization, etc.
+
+\section{Expected results}
+When using tree parallelization, there will be two methods. One is we use a global mutex to protect all the nodes in the tree. The other is to give each node a mutex. The former will be much slower because many threads are contending for a single lock, while the latter will use significantly more memory because each node has a lock, but the performance will be better. 
+
+
+
+\section{Timetable}
 
 
 
 
-\section{Citations and Bibliographies}
-
-The use of \BibTeX\ for the preparation and formatting of one's
-references is strongly recommended. Authors' names should be complete
---- use full first names (``Donald E. Knuth'') not initials
-(``D. E. Knuth'') --- and the salient identifying features of a
-reference should be included: title, year, volume, number, pages,
-article DOI, etc.
-
-The bibliography is included in your source document with these two
-commands, placed just before the \verb|\end{document}| command:
-\begin{verbatim}
-  \bibliographystyle{ACM-Reference-Format}
-  \bibliography{bibfile}
-\end{verbatim}
-where ``\verb|bibfile|'' is the name, without the ``\verb|.bib|''
-suffix, of the \BibTeX\ file.
-
-
-
-\section{Acknowledgments}
-
-Identification of funding sources and other support, and thanks to
-individuals and groups that assisted in the research and the
-preparation of the work should be included in an acknowledgment
-section, which is placed just before the reference section in your
-document.
-
-This section has a special environment:
-\begin{verbatim}
-  \begin{acks}
-  ...
-  \end{acks}
-\end{verbatim}
-so that the information contained therein can be more easily collected
-during the article metadata extraction phase, and to ensure
-consistency in the spelling of the section heading.
-
-Authors should not prepare this section as a numbered or unnumbered {\verb|\section|}; please use the ``{\verb|acks|}'' environment.
 
 \section{Appendices}
-
-If your work needs an appendix, add it before the
-``\verb|\end{document}|'' command at the conclusion of your source
-document.
-
-Start the appendix with the ``\verb|appendix|'' command:
-\begin{verbatim}
-  \appendix
-\end{verbatim}
-and note that in the appendix, sections are lettered, not
-numbered. This document has two appendices, demonstrating the section
-and subsection identification method.
-
-\section{SIGCHI Extended Abstracts}
-
-The ``\verb|sigchi-a|'' template style (available only in \LaTeX\ and
-not in Word) produces a landscape-orientation formatted article, with
-a wide left margin. Three environments are available for use with the
-``\verb|sigchi-a|'' template style, and produce formatted output in
-the margin:
-\begin{itemize}
-  \item {\verb|sidebar|}:  Place formatted text in the margin.
-  \item {\verb|marginfigure|}: Place a figure in the margin.
-  \item {\verb|margintable|}: Place a table in the margin.
-\end{itemize}
-
-%%
-%% The acknowledgments section is defined using the "acks" environment
-%% (and NOT an unnumbered section). This ensures the proper
-%% identification of the section in the article metadata, and the
-%% consistent spelling of the heading.
-\begin{acks}
-  To Robert, for the bagels and explaining CMYK and color spaces.
-\end{acks}
-
 %%
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
