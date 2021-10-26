@@ -102,23 +102,19 @@
 %% "authornote" and "authornotemark" commands
 %% used to denote shared contribution to the research.
 
+\author{張宸愷 0710018}
+\affiliation{%
+  \institution{EECSHP NYCU}
+  \city{Hsinchu}
+  \country{Taiwan}}
+
 \author{曾正豪 0716325}
 \affiliation{%
   \institution{CS NYCU}
   \city{Hsinchu}
   \country{Taiwan}}
 
-\author{王健業 0716098}
-\affiliation{%
-  \institution{CS NYCU}
-  \city{Hsinchu}
-  \country{Taiwan}}
 
-\author{張宸愷 0710018}
-\affiliation{%
-  \institution{EECSHP NYCU}
-  \city{Hsinchu}
-  \country{Taiwan}}
 
 %%
 %% By default, the full list of authors will be used in the page
@@ -169,7 +165,7 @@
 One of the most famous application of MCTS is AlphaGO. It uses MCTS with 2 other neural networks to play Go. An early version of AlphaGo was tested on hardware with various numbers of CPUs and GPUs, running in asynchronous or distributed mode. It was tested with search threads from 12 to 64, number of CPUs from 48 to 1920, and number of GPUs from 1 to 280. And in 2016, it changed to use TPUs (tensor processing units) as its computing unit. In recent years, it keeps beating many go players. Overall, MCTS is an algorithm that can be highly parallelized because of the high number of simulations. Hence, we decided to use MCTS as the topic of our final project.
 
 \section{Statement of problem}
-One of our teammates had taken the course AI capstone, and during that course he had been doing a final project about playing a 3D-version of connect4 using MCTS. He noticed that when he uses root parallelization, the performance of the MCTS decreases dramatically. The multithreaded version didn’t even manage to beat the single threaded one. Thus, we want to explore further on why it didn’t perform better and try to improve the multithreaded performance. 
+One of our teammates had taken the course AI capstone, and during that course he had been doing a final project about playing a 3D version of connect-4 using MCTS. He noticed that when he uses root parallelization, the performance of the MCTS decreases dramatically. The multithreaded version with 8 threads didn’t even manage to beat the single threaded one. Thus, we want to explore further on why it didn’t perform better and try to improve the multithreaded performance. 
 
 \section{Proposed approaches}
 
@@ -178,24 +174,20 @@ We will use C++ as our main programming language, together with Pthreads and CUD
 
 \section{Related work}
 
-A pretty detailed work~\cite{liu2020effective}. Different methods for enhancing the capability of MCTS on board games were explored in~\cite{weigel2017monte}. It also outlined some of the parallelization techniques for MCTS, root parallelization, leaf parallelization, etc.
+A pretty detailed work~\cite{liu2020effective}. Different methods for enhancing the capability of MCTS on board games were explored in~\cite{weigel2017monte}. It also outlined some of the parallelization techniques for MCTS, root parallelization, leaf parallelization, and tree parallelization, etc.
 
 \section{Expected results}
+When using tree parallelization, there will be two methods. One is we use a global mutex to protect all the nodes in the tree. The other is to give each node a mutex. The former will be much slower because many threads are contending for a single lock, while the latter will use significantly more memory because each node has a lock, but the performance will be better. 
+
+
 
 \section{Timetable}
 
-\section{Acknowledgments}
 
-Identification of funding sources and other support, and thanks to
-individuals and groups that assisted in the research and the
-preparation of the work should be included in an acknowledgment
-section, which is placed just before the reference section in your
-document.
 
 
 
 \section{Appendices}
-
 %%
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
