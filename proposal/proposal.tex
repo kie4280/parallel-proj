@@ -200,7 +200,7 @@ There are four ways to parallelize traditional UCB-MCTS mentioned in~\cite{guill
   \Description{Parallel MCTS}
 \label{fig:mcts_parallel}
 \end{figure}\\
-
+We will do comparison between GPU-based leaf parallelization, CPU-based root parallelization, P-UCT (from~\cite{Liu2020Watch}).
 
 
 \section{Language selection}
@@ -210,7 +210,7 @@ We will use C++ as our main programming language, together with Pthreads and CUD
 \cite{appplMCTS} is a introductory view on UCB-MCTS with additional enhancements e.g. rapid action value estimate (RAVE), all moves as first (AMAF), etc. A pretty detailed work~\cite{liu2020effective}~regarding current developments on different MCTS, including some exotic methods that uses virtual loss~\cite{Liu2020Watch} (i.e. do simulation before the previous backprop result is known). Different methods for enhancing the capability of MCTS on board games were explored in~\cite{weigel2017monte}.~\cite{guillaumeMCTS}\cite{weigel2017monte} also outlined some of the parallelization techniques for MCTS, root parallelization, leaf parallelization, and tree parallelization, etc. \cite{weigel2017monte} also outlined a way for a modularized MCTS algorithm that can scale up as the number of computer nodes grow. 
 
 \section{Expected results}
-When using tree parallelization, there will be two methods. One is we use a global mutex to protect all the nodes in the tree. The other is to give each node a mutex. The former will be much slower because many threads are contending for a single lock, while the latter will use significantly more memory because each node has a lock, but the performance will be better. \\
+When using tree parallelization, there will be two methods. One is we use a global mutex to protect all the nodes in the tree. The other is to give each node a mutex. The former will be much slower because many threads are contending for a single lock, while the latter will use significantly more memory because each node has a lock, but the performance will be better. The result of the proposed solution from~\cite{Liu2020Watch} will probably beat root parallelization and leaf parallelization.\\
 The MCTS will probably benefit the most from the high throughput of the GPU, because it requires an enormous amount of simulation (rollouts) to converge to the best move.
 
 \section{Timetable}

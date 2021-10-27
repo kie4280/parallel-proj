@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.22)  27 OCT 2021 07:13
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.22)  27 OCT 2021 07:51
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1495,13 +1495,8 @@ Requested font "ntxexa" at 9.0pt
 File: MCTS-parallel.png Graphic file (type bmp)
 <MCTS-parallel.png>
 
-Overfull \hbox (3.53757pt too wide) in paragraph at lines 196--203
+Overfull \hbox (3.53757pt too wide) in paragraph at lines 196--204
 \TU/LinLibertine(0)/m/n/9 There are four ways to parallelize traditional UCB-MCTS mentioned
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 196--203
-
  []
 
 (./proposal.bbl
@@ -1541,10 +1536,10 @@ Package rerunfilecheck Info: File `proposal.out' has not changed.
 Here is how much of TeX's memory you used:
  31605 strings out of 476473
  614527 string characters out of 5816481
- 998007 words of memory out of 5000000
+ 998221 words of memory out of 5000000
  51413 multiletter control sequences out of 15000+600000
  431163 words of font info for 148 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
  103i,11n,131p,893b,32774s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on proposal.xdv (2 pages, 107332 bytes).
+Output written on proposal.xdv (2 pages, 109796 bytes).
