@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{3}
+\begin{thebibliography}{4}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -59,6 +59,32 @@
 \newblock
 \newblock
 \showeprint[arxiv]{2006.08785}~[cs.LG]
+
+
+\bibitem[\protect\citeauthoryear{Silver, Huang, Maddison, Guez, Sifre,
+  Driessche, Schrittwieser, Antonoglou, Panneershelvam, Lanctot, Dieleman,
+  Grewe, Nham, Kalchbrenner, Sutskever, Lillicrap, Leach, Kavukcuoglu, Graepel,
+  and Hassabis}{Silver et~al\mbox{.}}{2016}]%
+        {alphaGo}
+\bibfield{author}{\bibinfo{person}{David Silver}, \bibinfo{person}{Aja Huang},
+  \bibinfo{person}{Christopher Maddison}, \bibinfo{person}{Arthur Guez},
+  \bibinfo{person}{Laurent Sifre}, \bibinfo{person}{George Driessche},
+  \bibinfo{person}{Julian Schrittwieser}, \bibinfo{person}{Ioannis Antonoglou},
+  \bibinfo{person}{Veda Panneershelvam}, \bibinfo{person}{Marc Lanctot},
+  \bibinfo{person}{Sander Dieleman}, \bibinfo{person}{Dominik Grewe},
+  \bibinfo{person}{John Nham}, \bibinfo{person}{Nal Kalchbrenner},
+  \bibinfo{person}{Ilya Sutskever}, \bibinfo{person}{Timothy Lillicrap},
+  \bibinfo{person}{Madeleine Leach}, \bibinfo{person}{Koray Kavukcuoglu},
+  \bibinfo{person}{Thore Graepel}, {and} \bibinfo{person}{Demis Hassabis}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Mastering the game of Go with deep neural networks
+  and tree search}.
+\newblock \bibinfo{journal}{\emph{Nature}}  \bibinfo{volume}{529}
+  (\bibinfo{date}{01} \bibinfo{year}{2016}), \bibinfo{pages}{484--489}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1038/nature16961}
+\showDOI{\tempurl}
 
 
 \bibitem[\protect\citeauthoryear{Weigel}{Weigel}{2017}]%

@@ -29,7 +29,7 @@
 		},
 		"latex-workshop.view.pdf.viewer": "tab",
 		"latex-workshop.latex.autoBuild.run": "onSave",
-		"latex-workshop.latex.outDir": "out",
+		"latex-workshop.latex.outDir": ".",
 		"latex-workshop.latex.tools": [
 			{
 				"name": "latexmk",
