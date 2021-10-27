@@ -172,7 +172,7 @@
 `Monte Carlo Tree Search', abbreviated in this text from now on as MCTS, is a probability sampling based tree search method for many applications. One of the most famous application of MCTS is AlphaGO~\cite{alphaGo}. It uses MCTS with 2 other neural networks to play Go. An early version of AlphaGo was tested on hardware with various numbers of CPUs and GPUs, running in asynchronous or distributed mode. It was tested with search threads from 12 to 64, number of CPUs from 48 to 1920, and number of GPUs from 1 to 280. And in 2016, it changed to use TPUs (tensor processing units) as its computing unit. In recent years, it keeps beating many go players. Overall, MCTS is an algorithm that can be highly parallelized because of the high number of simulations. Hence, we decided to use MCTS as the topic of our final project.
 
 \section{Statement of problem}
-One of our teammates had taken the course AI capstone, and during that course he had been doing a final project about playing a 3D version of connect-4 using upper confidence bound MCTS, i.e. UCB-MCTS. He noticed that when he uses root parallelization, the performance of the MCTS decreases dramatically. The multithreaded version with 8 threads didn't even manage to beat the single threaded one. Thus, we want to explore further on why it didn’t perform better and try to improve the multithreaded performance. The teammate's guess is that
+One of our teammates had taken the course AI capstone, and during that course he had been doing a final project about playing a 3D version of connect-4 using upper confidence bound MCTS, i.e. UCB-MCTS. He noticed that when he uses root parallelization, the performance of the MCTS decreases dramatically. The multithreaded version with 8 threads didn't even manage to beat the single-threaded one. Thus, we want to explore further on why it didn’t perform better and try to improve the multithreaded performance. The teammate's guess is that it's because of false sharing. 
 
 \section{Proposed approaches}
 \subsection{Overall design}
@@ -182,11 +182,13 @@ One of our teammates had taken the course AI capstone, and during that course he
   \Description{system design}
 \label{fig:system_design}
 \end{figure}
-Figure~\ref{fig:system_design} is our system design
-Chess game module: Deal with the game state of Chess, once it receives a legal move, it will change its game state and return it.
-arbiter and round-robin tournament maker: It will coordinate the game player and the game module. It checks if one move is legal and whether the game ends.
-3 MCTS versions: To calculate the best move next. It will receive a game state and return its best move. The difference between these 3 versions is their parallel approach.
-Additional: Maybe we will compete with other Chess engines to see the performance if we have enough time.
+Figure~\ref{fig:system_design} is our system design. Component descriptions:
+\begin{itemize}
+  \item Chess game module: Deal with the game state of Chess, once it receives a legal move, it will change its game state and return it.
+  \item Arbiter and round-robin tournament maker: It will coordinate the game player and the game module. It checks if one move is legal and whether the game ends.
+  \item 3 MCTS versions: To calculate the best move next. It will receive a game state and return its best move. The difference between these 3 versions is their parallel approach.
+  \item Additional: Maybe we will compete with other Chess engines to see the performance pitted against other state of the art, if we have enough time.
+\end{itemize}
 The performance of each method will depend on the games won, and the total amount of expanded nodes. 
 
 \subsection{parallelization details}
@@ -208,11 +210,10 @@ A pretty detailed work~\cite{liu2020effective}. Different methods for enhancing 
 
 \section{Expected results}
 When using tree parallelization, there will be two methods. One is we use a global mutex to protect all the nodes in the tree. The other is to give each node a mutex. The former will be much slower because many threads are contending for a single lock, while the latter will use significantly more memory because each node has a lock, but the performance will be better. \\
-The
 
 
 \section{Timetable}
-Below is the rough due date for the individual components of our project. 
+Below are the rough due dates for the individual components of our project. 
 \begin{itemize}
   \item 10/27 proposal
   \item 11/05 chess engine wrapper, and game module

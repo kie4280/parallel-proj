@@ -1263,10 +1263,6 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT ./system-design.png
 INPUT ./system-design.png
 INPUT system-design.png
-INPUT ./MCTS-parallel.png
-INPUT ./MCTS-parallel.png
-INPUT MCTS-parallel.png
-OUTPUT proposal.xdv
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/MinLibReg-ot1.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/nxlmi.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsy.tfm
@@ -1277,6 +1273,10 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/nxlmia.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsym.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
+OUTPUT proposal.xdv
+INPUT ./MCTS-parallel.png
+INPUT ./MCTS-parallel.png
+INPUT MCTS-parallel.png
 INPUT ./proposal.bbl
 INPUT proposal.bbl
 INPUT ./proposal.bbl

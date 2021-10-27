@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.22)  27 OCT 2021 04:08
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.10.22)  27 OCT 2021 04:59
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1461,19 +1461,6 @@ File: system-design.png Graphic file (type bmp)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-File: MCTS-parallel.png Graphic file (type bmp)
-<MCTS-parallel.png>
-
-Overfull \hbox (3.53757pt too wide) in paragraph at lines 193--200
-\TU/LinLibertine(0)/m/n/9 There are four ways to parallelize traditional UCB-MCTS mentioned
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1.1
-
-]
 Requested font "MinLibReg-ot1" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/MinLibReg-ot1.tfm
 Package microtype Info: Character `AE ' is missing
@@ -1500,13 +1487,28 @@ Requested font "ntxsyc" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 Requested font "ntxexa" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
- (./proposal.bbl)
+[1.1
+
+]
+File: MCTS-parallel.png Graphic file (type bmp)
+<MCTS-parallel.png>
+
+Overfull \hbox (3.53757pt too wide) in paragraph at lines 195--202
+\TU/LinLibertine(0)/m/n/9 There are four ways to parallelize traditional UCB-MCTS mentioned
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+
+ []
+
+(./proposal.bbl)
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 7.3pt on input line 243.
+(Font)              scaled to size 7.3pt on input line 244.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.3pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 5.5pt on input line 243.
+(Font)              scaled to size 5.5pt on input line 244.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 5.5pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinLibertine_R.otf
  (/usr/local/texlive/2021/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
@@ -1519,11 +1521,11 @@ Package balance Warning: You have called \balance in second column
 (balance)                Columns might not be balanced.
 
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 247.
+(Font)              scaled to size 9.0pt on input line 248.
 Requested font "[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 9.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R.otf
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 247.
+(Font)              scaled to size 7.0pt on input line 248.
 Requested font "[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;" at 7.0pt
  -> /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R.otf
 Requested font "[NotoSansTC-Regular].otf/OT:script=hani;language=dflt;" at 7.0pt
@@ -1541,4 +1543,4 @@ Here is how much of TeX's memory you used:
  1509 hyphenation exceptions out of 8191
  103i,11n,131p,893b,32774s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on proposal.xdv (2 pages, 94112 bytes).
+Output written on proposal.xdv (2 pages, 95292 bytes).
