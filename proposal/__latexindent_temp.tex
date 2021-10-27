@@ -85,7 +85,14 @@
 \setCJKmainfont{[NotoSansTC-Regular.otf]}
 \usepackage{hyperref}
 \usepackage{xurl}
+\usepackage{multirow}
+\usepackage{diagbox}
+\usepackage{float}
+\usepackage{graphicx}
 
+\definecolor{barblue}{RGB}{153,204,254}
+\definecolor{groupblue}{RGB}{51,102,254}
+\definecolor{linkred}{RGB}{165,0,33} 
 
 %%
 %% end of the preamble, start of the body of the document source.
@@ -103,17 +110,25 @@
 %% "authornote" and "authornotemark" commands
 %% used to denote shared contribution to the research.
 
+\author{曾正豪 0716325}
+\affiliation{%
+  \institution{CS NYCU}
+  \city{Hsinchu}
+  \country{Taiwan}}
+
+  \author{王健業 0716098}
+  \affiliation{%
+    \institution{CS NYCU}
+    \city{Hsinchu}
+    \country{Taiwan}}
+  
+
 \author{張宸愷 0710018}
 \affiliation{%
   \institution{EECSHP NYCU}
   \city{Hsinchu}
   \country{Taiwan}}
 
-\author{曾正豪 0716325}
-\affiliation{%
-  \institution{CS NYCU}
-  \city{Hsinchu}
-  \country{Taiwan}}
 
 
 
@@ -144,7 +159,7 @@
 %%
 %% Keywords. The author(s) should pick words that accurately describe
 %% the work being presented. Separate the keywords with commas.
-\keywords{MCTS, parallel programming, Pthreads, CUDA}
+\keywords{MCTS, parallel programming, Pthreads, CUDA, Chess}
 
 %% A "teaser" image appears between the author and affiliation
 %% information and the body of the document, and typically spans the
@@ -162,39 +177,67 @@
 \maketitle
 
 \section{Introduction}
-`Monte Carlo Tree Search', abbreviated in this text from now on as MCTS, is a probability based tree search method for many applications. 
-One of the most famous application of MCTS is AlphaGO. It uses MCTS with 2 other neural networks to play Go. An early version of AlphaGo was tested on hardware with various numbers of CPUs and GPUs, running in asynchronous or distributed mode. It was tested with search threads from 12 to 64, number of CPUs from 48 to 1920, and number of GPUs from 1 to 280. And in 2016, it changed to use TPUs (tensor processing units) as its computing unit. In recent years, it keeps beating many go players. Overall, MCTS is an algorithm that can be highly parallelized because of the high number of simulations. Hence, we decided to use MCTS as the topic of our final project.
+`Monte Carlo Tree Search', abbreviated in this text from now on as MCTS, is a probability sampling based tree search method for many applications. One of the most famous application of MCTS is AlphaGO~\cite{alphaGo}. It uses MCTS with 2 other neural networks to play Go. An early version of AlphaGo was tested on hardware with various numbers of CPUs and GPUs, running in asynchronous or distributed mode. It was tested with search threads from 12 to 64, number of CPUs from 48 to 1920, and number of GPUs from 1 to 280. And in 2016, it changed to use TPUs (tensor processing units) as its computing unit. In recent years, it keeps beating many go players. Overall, MCTS is an algorithm that can be highly parallelized because of the high number of simulations. Hence, we decided to use MCTS as the topic of our final project.
 
 \section{Statement of problem}
-One of our teammates had taken the course AI capstone, and during that course he had been doing a final project about playing a 3D version of connect-4 using UCB-MCTS. He noticed that when he uses root parallelization, the performance of the MCTS decreases dramatically. The multithreaded version with 8 threads didn’t even manage to beat the single threaded one. Thus, we want to explore further on why it didn’t perform better and try to improve the multithreaded performance. 
+One of our teammates had taken the course AI capstone, and during that course he had been doing a final project about playing a custom 3D version of connect-4 using upper confidence bound MCTS, i.e. UCB-MCTS. He noticed that when he uses root parallelization, the performance of the MCTS decreases dramatically. The multithreaded version with 8 threads didn't even manage to beat the single-threaded one. The teammate's guess is that it's because of false sharing. Thus, we want to explore further on ways to improve multithreaded performance, and hopefully use this new improved MCTS to play on well-known games such as Chess, instead of some obscure game that our teammate played back then.\\
+
 
 \section{Proposed approaches}
-There are four ways to parallelize traditional UCB-MCTS mentioned in \cite{guillaumeMCTS}. Leaf parallelization, root parallelization, tree parallelization with global mutex, and tree parallelization with local mutex. 
+\subsection{Overall design}
+\begin{figure}[h]
+  \includegraphics[width=8.5cm]{system-design.png}
+  \caption{Our system diagram}
+  \Description{system design}
+\label{fig:system_design}
+\end{figure}
+Figure~\ref{fig:system_design} is our system design. Component descriptions:
+\begin{itemize}
+  \item Chess game module: Deal with the game state of Chess, once it receives a legal move, it will change its game state and return it.
+  \item Arbiter and round-robin tournament maker: It will coordinate the game player and the game module. It checks if one move is legal and whether the game ends.
+  \item 3 MCTS versions: To calculate the best move next. It will receive a game state and return its best move. The difference between these 3 versions is their parallel approach.
+  \item Additional: Maybe we will compete with other Chess engines to see the performance pitted against other state of the art, if we have enough time.
+\end{itemize}
+The performance of each method will depend on the games won and the total amount of expanded nodes. 
 
-\begin{figure}[H]
+\subsection{parallelization details}
+There are four ways to parallelize traditional UCB-MCTS mentioned in~\cite{guillaumeMCTS}, and illustrated in figure~\ref{fig:mcts_parallel}. Leaf parallelization, root parallelization, tree parallelization with global mutex, and tree parallelization with local mutexes. We will not use leaf parallelization because according to~\cite{guillaumeMCTS}, the efficiency is very low. Also, having a large number of simulations on a single node defeats the purpose of having an asymmetric tree.
+\begin{figure}[h]
   \includegraphics[width=8.5cm]{MCTS-parallel.png}
   \caption{Ways of parallelizing MCTS}
   \Description{Parallel MCTS}
 \label{fig:mcts_parallel}
+\end{figure}\\
+We will do comparison between GPU-based and CPU-based on root, P-UCT (from~\cite{Liu2020Watch}) parallelization. \\
+Our root parallelization (figure \ref{fig:root_parallel}) uses a threadpool containing different Monte Carlo search trees. When the arbiter asks for the next step, the main thread queries all the worker threads and returns the step with the maximum number of votes. 
+\begin{figure}[h]
+  \includegraphics[width=8.5cm]{root_parallel.pdf}
+  \caption{Root parallelization diagram}
+  \Description{Parallel root}
+\label{fig:root_parallel}
 \end{figure}
 
-\section{Language selection}
-We will use C++ as our main programming language, together with Pthreads and CUDA. Since we want to compare the performance of CPU and GPU on parallel programs.
 
+\section{Language selection}
+We will use C++ as our main programming language, together with Pthreads and CUDA, since we want to compare the performance of CPU and GPU on parallel programs. 
 
 \section{Related work}
-
-A pretty detailed work~\cite{liu2020effective}. Different methods for enhancing the capability of MCTS on board games were explored in~\cite{weigel2017monte}. \cite{weigel2017monte}\cite{guillaumeMCTS} also outlined some of the parallelization techniques for MCTS, root parallelization, leaf parallelization, and tree parallelization, etc.
+\cite{appplMCTS} is a introductory view on UCB-MCTS with additional enhancements e.g. rapid action value estimate (RAVE), all moves as first (AMAF), etc. A pretty detailed work~\cite{liu2020effective}~regarding current developments on different MCTS, including some exotic methods that uses virtual loss~\cite{Liu2020Watch} (i.e. do simulation before the previous backprop result is known). Different methods for enhancing the capability of MCTS on board games were explored in~\cite{weigel2017monte}.~\cite{guillaumeMCTS}\cite{weigel2017monte} also outlined some of the parallelization techniques for MCTS, root parallelization, leaf parallelization, and tree parallelization, etc. \cite{weigel2017monte} also outlined a way for a modularized distributed MCTS algorithm that can scale up as the number of computer nodes grows. 
 
 \section{Expected results}
-When using tree parallelization, there will be two methods. One is we use a global mutex to protect all the nodes in the tree. The other is to give each node a mutex. The former will be much slower because many threads are contending for a single lock, while the latter will use significantly more memory because each node has a lock, but the performance will be better. 
-
-
+When using tree parallelization, there will be two methods. One is we use a global mutex to protect all the nodes in the tree. The other is to give each node a mutex. The former will be much slower because many threads are contending for a single lock, while the latter will use significantly more memory because each node has a lock, but the performance will be better. The result of the proposed solution from~\cite{Liu2020Watch} will probably beat root parallelization and tree parallelization. The MCTS will probably benefit the most from the high throughput of the GPU, because it requires an enormous amount of simulation (rollouts) to converge to the best move.
 
 \section{Timetable}
-
-
-
+Below are the rough due dates for the individual components of our project. 
+\begin{itemize}
+  \item 10/27 proposal
+  \item 11/05 chess engine wrapper and game module
+  \item 11/20 Pthread version
+  \item 12/10 CUDA version
+  \item 12/17 Performance analysis
+  \item 12/31 Finalize report and source code
+  
+\end{itemize}
 
 
 \section{Appendices}
@@ -214,6 +257,7 @@ When using tree parallelization, there will be two methods. One is we use a glob
 % \end{verbatim*}
 \begin{enumerate}
   \item Monte Carlo tree search (\url{https://en.wikipedia.org/wiki/Monte_Carlo_tree_search})
+  
 \end{enumerate}
 
 

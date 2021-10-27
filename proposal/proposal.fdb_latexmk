@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex proposal"] 1635320476 "proposal.aux" "proposal.bbl" "proposal" 1635321068
+["bibtex proposal"] 1635347428 "proposal.aux" "proposal.bbl" "proposal" 1635347575
   "./ACM-Reference-Format.bst" 1634828075 89982 63a2a156caada91051fa17fe0806ade0 ""
-  "proposal.aux" 1635321067 4085 370c5c775b68b41b9b31eef1922584e6 "xelatex"
+  "proposal.aux" 1635347494 4601 c2a0d8601b0808236d898428e41c6170 "xelatex"
   "reference.bib" 1635318977 2023 494ab48d47859861960eedaa64f7da09 ""
   (generated)
   "proposal.bbl"
   "proposal.blg"
-["xdvipdfmx"] 1635321067 "proposal.xdv" "proposal.pdf" "proposal" 1635321068
-  "proposal.xdv" 1635321067 109796 5a54082c5d54956dd83e63e5d3f18be8 "xelatex"
+["xdvipdfmx"] 1635347494 "proposal.xdv" "proposal.pdf" "proposal" 1635347575
+  "proposal.xdv" 1635347494 120300 84e2f8d98863ce62b5a8fc61b1070eb7 "xelatex"
   (generated)
   "proposal.pdf"
-["xelatex"] 1635321062 "/workspace/proposal/proposal.tex" "proposal.xdv" "proposal" 1635321068
+["xelatex"] 1635347489 "/workspace/proposal/proposal.tex" "proposal.xdv" "proposal" 1635347575
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -168,13 +168,15 @@
   "/usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf" 1621028613 40042 fe981136cbb5f3715ab1b0e46e3d3892 ""
   "/usr/local/texlive/2021/texmf-var/web2c/xetex/xelatex.fmt" 1634872942 5133933 fedb8269ead37627dbaac9f4a8bec027 ""
   "/usr/local/texlive/2021/texmf.cnf" 1634445283 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "/workspace/proposal/proposal.tex" 1635321062 11251 04facd24dd4fa5be3c59b35c9864bce4 ""
+  "/workspace/proposal/proposal.tex" 1635347575 12439 9d597b6e5747905f8c8b6b885134b0b7 ""
   "MCTS-parallel.png" 1635257907 273995 13135fa966fd9dfa10c6554e04141f16 ""
   "MCTS-steps.png" 1634869287 72229 bd75e220b036325225796da7f769461c ""
-  "proposal.aux" 1635321067 4085 370c5c775b68b41b9b31eef1922584e6 "xelatex"
-  "proposal.bbl" 1635320476 5497 b91e5fcf7305452b8d00d627cf023cc8 "bibtex proposal"
-  "proposal.out" 1635321067 1719 6e239056a1920a775e0379ac3f9ff0b5 "xelatex"
-  "proposal.tex" 1635321062 11251 04facd24dd4fa5be3c59b35c9864bce4 ""
+  "P-UDT.pdf" 1635346910 33799 a73b04af55b7a1d624aee3092d778ab9 ""
+  "proposal.aux" 1635347494 4601 c2a0d8601b0808236d898428e41c6170 "xelatex"
+  "proposal.bbl" 1635347428 5497 b91e5fcf7305452b8d00d627cf023cc8 "bibtex proposal"
+  "proposal.out" 1635347494 1720 e1cda23028a64137228cae63c09cd246 "xelatex"
+  "proposal.tex" 1635347575 12439 9d597b6e5747905f8c8b6b885134b0b7 ""
+  "root-parallel.pdf" 1635343227 23181 ed67de6726d4420e7490ab4afd48fa50 ""
   "system-design.png" 1635310947 24771 2a796a7e105dbd4751099b5063d41c69 ""
   (generated)
   "proposal.log"

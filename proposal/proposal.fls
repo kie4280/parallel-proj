@@ -1113,6 +1113,7 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/preprint/balance.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/preprint/balance.sty
@@ -1277,6 +1278,12 @@ OUTPUT proposal.xdv
 INPUT ./MCTS-parallel.png
 INPUT ./MCTS-parallel.png
 INPUT MCTS-parallel.png
+INPUT ./root-parallel.pdf
+INPUT ./root-parallel.pdf
+INPUT root-parallel.pdf
+INPUT ./P-UDT.pdf
+INPUT ./P-UDT.pdf
+INPUT P-UDT.pdf
 INPUT ./proposal.bbl
 INPUT proposal.bbl
 INPUT ./proposal.bbl
