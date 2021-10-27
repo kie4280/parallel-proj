@@ -11,44 +11,49 @@ Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 4 entries,
+Warning--empty publisher in Liu2020Watch
+Warning--empty address in Liu2020Watch
+Warning--page numbers missing in both pages and numpages fields in Liu2020Watch
+Warning--page numbers missing in both pages and numpages fields in appplMCTS
+You've used 6 entries,
             5959 wiz_defined-function locations,
-            1494 strings with 18793 characters,
-and the built_in function-call counts, 5052 in all, are:
-= -- 533
-> -- 352
+            1506 strings with 19204 characters,
+and the built_in function-call counts, 7316 in all, are:
+= -- 800
+> -- 463
 < -- 0
-+ -- 120
-- -- 120
-* -- 468
-:= -- 650
-add.period$ -- 20
-call.type$ -- 4
-change.case$ -- 47
-chr.to.int$ -- 4
-cite$ -- 4
-duplicate$ -- 320
-empty$ -- 229
-format.name$ -- 132
-if$ -- 1071
-int.to.chr$ -- 2
++ -- 159
+- -- 160
+* -- 647
+:= -- 894
+add.period$ -- 29
+call.type$ -- 6
+change.case$ -- 63
+chr.to.int$ -- 5
+cite$ -- 10
+duplicate$ -- 507
+empty$ -- 364
+format.name$ -- 179
+if$ -- 1614
+int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 4
-newline$ -- 77
-num.names$ -- 32
-pop$ -- 119
+missing$ -- 13
+newline$ -- 96
+num.names$ -- 47
+pop$ -- 212
 preamble$ -- 1
-purify$ -- 81
+purify$ -- 113
 quote$ -- 0
-skip$ -- 123
+skip$ -- 179
 stack$ -- 0
-substring$ -- 273
-swap$ -- 28
+substring$ -- 384
+swap$ -- 39
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 106
-warning$ -- 0
-while$ -- 22
+type$ -- 146
+warning$ -- 4
+while$ -- 34
 width$ -- 0
-write$ -- 109
+write$ -- 144
+(There were 4 warnings)

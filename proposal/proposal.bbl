@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{4}
+\begin{thebibliography}{6}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -48,17 +48,45 @@
 \newblock
 
 
+\bibitem[\protect\citeauthoryear{Liu, Chen, Yu, Zhai, Zhou, and Liu}{Liu
+  et~al\mbox{.}}{2020a}]%
+        {Liu2020Watch}
+\bibfield{author}{\bibinfo{person}{Anji Liu}, \bibinfo{person}{Jianshu Chen},
+  \bibinfo{person}{Mingze Yu}, \bibinfo{person}{Yu Zhai},
+  \bibinfo{person}{Xuewen Zhou}, {and} \bibinfo{person}{Ji Liu}.}
+  \bibinfo{year}{2020}\natexlab{a}.
+\newblock \showarticletitle{Watch the Unobserved: A Simple Approach to
+  Parallelizing Monte Carlo Tree Search}. In
+  \bibinfo{booktitle}{\emph{International Conference on Learning
+  Representations}}.
+\newblock
+\urldef\tempurl%
+\url{https://openreview.net/forum?id=BJlQtJSKDB}
+\showURL{%
+\tempurl}
+
+
 \bibitem[\protect\citeauthoryear{Liu, Liang, Liu, den Broeck, and Chen}{Liu
-  et~al\mbox{.}}{2020}]%
+  et~al\mbox{.}}{2020b}]%
         {liu2020effective}
 \bibfield{author}{\bibinfo{person}{Anji Liu}, \bibinfo{person}{Yitao Liang},
   \bibinfo{person}{Ji Liu}, \bibinfo{person}{Guy~Van den Broeck}, {and}
-  \bibinfo{person}{Jianshu Chen}.} \bibinfo{year}{2020}\natexlab{}.
+  \bibinfo{person}{Jianshu Chen}.} \bibinfo{year}{2020}\natexlab{b}.
 \newblock \bibinfo{title}{On Effective Parallelization of Monte Carlo Tree
   Search}.
 \newblock
 \newblock
 \showeprint[arxiv]{2006.08785}~[cs.LG]
+
+
+\bibitem[\protect\citeauthoryear{Magnuson and Max}{Magnuson and Max}{2015}]%
+        {appplMCTS}
+\bibfield{author}{\bibinfo{person}{Magnuson} {and} \bibinfo{person}{Max}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Monte Carlo Tree Search and Its Applications}.
+\newblock \bibinfo{journal}{\emph{University of Minnesota, Morris Undergraduate
+  Journal}} \bibinfo{volume}{2}, \bibinfo{number}{2} (\bibinfo{year}{2015}).
+\newblock
 
 
 \bibitem[\protect\citeauthoryear{Silver, Huang, Maddison, Guez, Sifre,
