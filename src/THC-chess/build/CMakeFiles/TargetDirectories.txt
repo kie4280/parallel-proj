@@ -1,0 +1,4 @@
+/home/kie/MyProjects/parallel-proj/src/THC-chess/build/CMakeFiles/edit_cache.dir
+/home/kie/MyProjects/parallel-proj/src/THC-chess/build/CMakeFiles/rebuild_cache.dir
+/home/kie/MyProjects/parallel-proj/src/THC-chess/build/CMakeFiles/thc_chess_static.dir
+/home/kie/MyProjects/parallel-proj/src/THC-chess/build/CMakeFiles/thc_chess.dir
