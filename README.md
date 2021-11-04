@@ -6,12 +6,12 @@ This is the repo for our final project. The proposal is in the proposal folder w
 
 ### Using CMake (recommended)
 ```
-$ cmake -B build/ 
-$ make -C build/
+cmake -B build/ 
+make -C build/
 ````
 
 ### Makefile
 ```
-$ make all
+make all
 ```
 
