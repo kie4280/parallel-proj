@@ -1,7 +1,12 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "../../hdd/MyProjects/parallel-proj"
 		}
-	]
+	],
+	"settings": {
+		"files.associations": {
+			"cstring": "cpp"
+		}
+	}
 }
