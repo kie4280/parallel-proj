@@ -23,11 +23,14 @@
  */
 
 #define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-#include <assert.h>
+#include <cstdio>
+#include <cstdlib>
+#include <string>
+#include <cstring>
+#include <cctype>
+#include <cstddef>
+#include <cassert>
+
 #include <algorithm>
 #include "thc.h"
 using namespace std;
@@ -4480,10 +4483,10 @@ void ChessEvaluation::Planning()
         // Reset dynamic king position arrays
         memcpy( king_ending_bonus_dynamic_white,
                 king_ending_bonus_static,
-                sizeof(king_ending_bonus_dynamic_white) );
+                sizeof(king_ending_bonus_static) );
         memcpy( king_ending_bonus_dynamic_black,
                 king_ending_bonus_static,
-                sizeof(king_ending_bonus_dynamic_black) );
+                sizeof(king_ending_bonus_static) );
 
         // Encourage kings to go where the pawns are
         #ifdef USE_CHASE_PAWNS

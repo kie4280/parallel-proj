@@ -23,11 +23,14 @@
  */
 
 #define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-#include <assert.h>
+#include <cstdio>
+#include <cstdlib>
+#include <string>
+#include <cstring>
+#include <cctype>
+#include <cstddef>
+#include <cassert>
+
 #include <algorithm>
 #include "thc.h"
 using namespace std;
