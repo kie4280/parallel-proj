@@ -22,7 +22,7 @@ void display_position( thc::ChessRules &cr, const std::string &description )
     printf( "Position = %s\n", s.c_str() );
 }
 
-int main()
+int main1()
 {
     // Example 1, Play a few good moves from the initial position
     thc::ChessRules cr;
@@ -97,5 +97,6 @@ int main()
         printf( "As expected, all flags true, so both penultimate and final positions are legal, in the final position White is mated\n" );
     else
         printf( "Strange(?!), we expected all flags true, meaning both penultimate and final positions are legal, in the final position White is mated\n" );
+    return 0;
 }
 

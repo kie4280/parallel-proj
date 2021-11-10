@@ -4,14 +4,14 @@ project(final-proj VERSION 0.1.0)
 # include(CTest)
 # enable_testing()
 
-add_subdirectory(${PROJECT_SOURCE_DIR}/src/THC-chess)
+add_subdirectory(${PROJECT_SOURCE_DIR}/src/THC-chess EXCLUDE_FROM_ALL)
+include_directories(${THC_CHESS_INCLUDE})
 
-
-add_executable(final-proj src/main.cpp)
+add_executable(final-proj src/benchmark.cpp)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
-target_link_libraries(final-proj PRIVATE Threads::Threads)
+target_link_libraries(final-proj PRIVATE Threads::Threads thc_chess_static)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

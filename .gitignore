@@ -1,4 +1,8 @@
 build/**
 src/THC-chess/CMakeFiles/**
 src/UCI/output.png
+proposal/__latexindent_temp.tex
+proposal/proposal.*
+!proposal/proposal.pdf
+!proposal/proposal.tex
 
