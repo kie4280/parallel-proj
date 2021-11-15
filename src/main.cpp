@@ -30,19 +30,19 @@ int main()
     while (std::getline(std::cin, line)){
         std::istringstream is(line);
         token.clear();
-		is >> std::skipws >> token;
+        is >> std::skipws >> token;
 
-		if (token == "uci")
-		{
-			std::cout << "id name PP project" << std::endl;
-			std::cout << "id author " << std::endl;
-			PP_UCI_opt.print_UCI_opt();
-			std::cout << "uciok" << std::endl;
-		}
-		else if (token == "isready"){
-			std::cout << "readyok" << std::endl;
-		}
-		else if (token == "setoption") {
+        if (token == "uci")
+        {
+            std::cout << "id name PP project" << std::endl;
+            std::cout << "id author " << std::endl;
+            PP_UCI_opt.print_UCI_opt();
+            std::cout << "uciok" << std::endl;
+        }
+        else if (token == "isready"){
+            std::cout << "readyok" << std::endl;
+        }
+        else if (token == "setoption") {
             std::string name, value;
             while (is >> token){
                 if (token == "name") is >> name;
@@ -50,15 +50,15 @@ int main()
             }
             PP_UCI_opt.set_UCI_opt(name, value);
         }
-		else if (token == "color"){
+        else if (token == "color"){
             const char *color;
             color = cr->WhiteToPlay() ? "white" : "black";
             std::cout << "colorToPlay: " << color << std::endl;
         }
-		else if (token == "ucinewgame"){
-		    cr = std::shared_ptr<thc::ChessRules>(new thc::ChessRules());
+        else if (token == "ucinewgame"){
+            cr = std::shared_ptr<thc::ChessRules>(new thc::ChessRules());
         }
-		else if (token == "position"){
+        else if (token == "position"){
             std::string token, fen;
             is >> token;
             if (token == "startpos"){
@@ -66,7 +66,7 @@ int main()
             }
             else if (token == "fen"){
                 while (is >> token && token != "moves")
-			        fen += token + " ";
+                    fen += token + " ";
             }
             else{
                 std::cout << "you should input fen format string.\n";
@@ -86,27 +86,27 @@ int main()
             display_position(*cr, "");
 #endif 
         }
-		else if (token == "print"){//for debug, not in UCI standard
+        else if (token == "print"){//for debug, not in UCI standard
             display_position(*cr, "Current board");
         }
-		else if (token == "printOptions"){//for debug, not in UCI standard
+        else if (token == "printOptions"){//for debug, not in UCI standard
             PP_UCI_opt.print_UCI_opt();
         }
-		else if (token == "go"){
+        else if (token == "go"){
             struct UCI_go_opt go_opt;
             go_opt.infinite = false;
-			while (is >> token){
-				if (token == "wtime")           is >> go_opt.wtime;
-				else if (token == "btime")      is >> go_opt.btime;
-				else if (token == "winc")       is >> go_opt.winc;
-				else if (token == "binc")       is >> go_opt.binc;
-				else if (token == "movestogo")  is >> go_opt.movestogo;
+            while (is >> token){
+                if (token == "wtime")           is >> go_opt.wtime;
+                else if (token == "btime")      is >> go_opt.btime;
+                else if (token == "winc")       is >> go_opt.winc;
+                else if (token == "binc")       is >> go_opt.binc;
+                else if (token == "movestogo")  is >> go_opt.movestogo;
                 else if (token == "depth")      is >> go_opt.depth;
                 else if (token == "nodes")      is >> go_opt.nodes;
                 else if (token == "mate")       is >> go_opt.mate;
                 else if (token == "movetime")   is >> go_opt.movetime;
                 else if (token == "infinite")   go_opt.infinite = true;
-			}
+            }
             /* TODO
                 mv = MCTS.run(go_opt, cr);
             */
@@ -115,13 +115,13 @@ int main()
 #ifdef DEBUG
             display_position(*cr, "");
 #endif 
-		}
-		else if (token == "quit"){
-			std::cout << "Terminating.." << std::endl;
-			break;
-		}
-		else // Command not handled
-			std::cout << "what?" << std::endl;
+        }
+        else if (token == "quit"){
+            std::cout << "Terminating.." << std::endl;
+            break;
+        }
+        else // Command not handled
+            std::cout << "what?" << std::endl;
     }
     return 0;
 }
