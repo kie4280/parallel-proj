@@ -5,9 +5,10 @@ project(final-proj VERSION 0.1.0)
 # enable_testing()
 
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/THC-chess EXCLUDE_FROM_ALL)
-include_directories(${THC_CHESS_INCLUDE})
+include_directories(${THC_CHESS_INCLUDE} ./src/UCI ./src/MCTS)
 
-add_executable(final-proj src/benchmark.cpp)
+
+add_executable(final-proj src/main.cpp src/UCI/UCI.cpp src/MCTS/MCTS_root.cpp)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)

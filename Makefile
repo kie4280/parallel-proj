@@ -22,4 +22,5 @@ benchmark: src/benchmark.cpp thc
 clean:
 	rm -r build/
 
-.PHONY: clean 
+.PHONY: 
+	clean 
