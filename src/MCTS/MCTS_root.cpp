@@ -1,7 +1,11 @@
 #include "MCTS_root.h"
 
+#include <chrono>
 #include <cmath>
+#include <ratio>
 #include <thread>
+
+#include "../utils.h"
 
 namespace {
 inline int argmaxUCB(Node *n) {
@@ -27,45 +31,57 @@ MCTS_ROOT::~MCTS_ROOT() {}
 
 thc::Move MCTS_ROOT::run(const UCI_go_opt &go_opt,
                          const std::shared_ptr<thc::ChessRules> cr) {
-  std::cout << "hello" << std::endl;
+  // TODO: add more trees
+  auto mcts_single = std::unique_ptr<MCTS>();
+  return mcts_single->run(go_opt, cr);
 }
 
 void MCTS_ROOT::reset() {}
 
 // MCTS is submodule of MCTS_ROOT
 
-MCTS::MCTS(unsigned int threads) : gen(rd()) { pool.reset(threads); }
+MCTS::MCTS() : gen(rd()) {}
 
 MCTS::~MCTS() {}
 
 thc::Move MCTS::run(const UCI_go_opt &go_opt,
                     const std::shared_ptr<thc::ChessRules> cr) {
-  std::cout << "hello" << std::endl;
-  while (1) {
+  std::chrono::time_point<std::chrono::steady_clock> start;
+  Logger::debug("[MCTS] computing next move...");
+  this->isWhite = cr->WhiteToPlay();
+  // if (this->root == nullptr) {
+    this->root = std::make_shared<Node>();
+    this->root->color = this->isWhite ? BLACK : WHITE;
+  // }
+  while (true) {
     thc::Move mv;
     thc::ChessRules cr_copy(*cr);
     Node *par = selection(&cr_copy);
     Node *new_node = expansion(par, &cr_copy);
     auto result = simulate(new_node, &cr_copy);
     backprop(new_node, result);
+    auto timer = std::chrono::duration_cast<std::chrono::milliseconds>(
+        std::chrono::steady_clock::now() - start);
+    if (timer.count() >= go_opt.movetime - TL_PADDING) {
+      break;
+    }
   }
-  return root->children[argmaxUCB(root.get())]->move;
+  Logger::debug("[MCTS] calculate complete");
+  return this->root->children[argmaxUCB(this->root.get())]->move;
 }
 
 void MCTS::reset() { root.reset(); }
 
 Node *MCTS::selection(thc::ChessRules *cr) {
   Node *wp = root.get();
-  Node *prev_wp = wp;
   while (wp->total_child == wp->child_count) {
     int candidate = argmaxUCB(wp);
 
     cr->PlayMove(wp->move);
     if (candidate == -1) return wp;
-    prev_wp = wp;
     wp = wp->children[candidate].get();
   }
-  return prev_wp;
+  return wp;
 }
 
 Node *MCTS::expansion(Node *leaf, thc::ChessRules *cr) {
@@ -111,9 +127,9 @@ std::array<uint8_t, 2> MCTS::simulate(Node *node, thc::ChessRules *cr) {
 }
 
 void MCTS::backprop(Node *node, std::array<uint8_t, 2> &result) {
-  while (node->parent != nullptr) {
+  while (node != nullptr) {
     node->wins += result[node->color];
-    ++node->visits;
+    node->visits += SIMS;
     node = node->parent;
   }
 }

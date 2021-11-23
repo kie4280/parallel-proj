@@ -1,10 +1,11 @@
 CXX := g++
-CXX_FLAGS := -std=c++17 -O3 -lpthread -mavx2
+CXX_FLAGS := -std=c++17 -lpthread -g
 OBJECT := build/UCI.o build/thc.o
 
 
-all: makebuild src/main.cpp thc UCI
-	$(CXX) $(CXX_FLAGS) src/main.cpp $(OBJECT) -o build/main.out
+all: makebuild src/main.cpp thc UCI src/utils.cpp
+	$(CXX) $(CXX_FLAGS) -Isrc/MCTS/ -Isrc/ src/main.cpp src/utils.cpp \
+	src/MCTS/MCTS_root.cpp $(OBJECT) -o build/main.out
 
 makebuild: 
 	mkdir -p build
@@ -18,6 +19,9 @@ UCI: makebuild src/UCI/**
 benchmark: src/benchmark.cpp thc
 	$(CXX) $(CXX_FLAGS) -o build/benchmark.out src/benchmark.cpp build/thc.o
 	build/benchmark.out
+
+play:
+	python3 src/arbiter.py
 
 clean:
 	rm -r build/

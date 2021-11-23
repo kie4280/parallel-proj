@@ -24,7 +24,7 @@ int main() {
       MCTS declare here.
   */
   // MCTS root
-  std::unique_ptr<MCTS_ROOT> mcts = std::make_unique<MCTS_ROOT>();
+  auto mcts = std::make_unique<MCTS>();
 
   std::string line;
   std::string token;

@@ -15,6 +15,7 @@
 
 #define UCB_explore 1.414f
 #define SIMS 3
+#define TL_PADDING 100
 
 struct Node;
 
@@ -48,16 +49,15 @@ class MCTS {
  private:
   std::random_device rd;
   std::default_random_engine gen;
-  thread_pool pool;
   std::shared_ptr<Node> root;
-  uint8_t color = WHITE;
+  bool isWhite;
   inline Node *selection(thc::ChessRules *cr);
   inline Node *expansion(Node *leaf, thc::ChessRules *cr);
   inline std::array<uint8_t, 2> simulate(Node *node, thc::ChessRules *cr);
   inline void backprop(Node *node, std::array<uint8_t, 2> &result);
 
  public:
-  MCTS(unsigned int threads = std::thread::hardware_concurrency());
+  MCTS();
   ~MCTS();
   thc::Move run(const UCI_go_opt &go_opt,
                 const std::shared_ptr<thc::ChessRules> cr);

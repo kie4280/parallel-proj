@@ -2,19 +2,19 @@ import chess
 import chess.engine
 import chess.svg
 from cairosvg import svg2png
-import cv2
+# import cv2
 
 SHOW_IMG = 1
 P1_ROUND_TIME = 0.1
 P2_ROUND_TIME = 0.1
 ITERRATION = 100
 
-stockfish = chess.engine.SimpleEngine.popen_uci(r"../engines/stockfish_14.1_win_x64_avx2.exe")
-#pthread_MCTS = chess.engine.SimpleEngine.popen_uci(r"path")
+stockfish = chess.engine.SimpleEngine.popen_uci(r"engines/stockfish_14.1_linux_x64_avx2")
+pthread_MCTS = chess.engine.SimpleEngine.popen_uci(r"build/main.out")
 #cuda_MCTS = chess.engine.SimpleEngine.popen_uci(r"path")
 
 player1 = stockfish
-player2 = stockfish
+player2 = pthread_MCTS
 
 
 p1_win_cnt = 0
@@ -31,9 +31,9 @@ while cur_game < ITERRATION:
         if SHOW_IMG:
             drawing = chess.svg.board(board, size=350, lastmove = result.move)  
             svg2png(bytestring=drawing,write_to='output.png')
-            img = cv2.imread('output.png')
-            cv2.imshow('img', img)
-            cv2.waitKey(33)
+            # img = cv2.imread('output.png')
+            # cv2.imshow('img', img)
+            # cv2.waitKey(33)
         if board.is_game_over():
             winner = board.outcome().winner
             break
@@ -43,9 +43,9 @@ while cur_game < ITERRATION:
         if SHOW_IMG:
             drawing = chess.svg.board(board, size=350, lastmove = result.move)  
             svg2png(bytestring=drawing,write_to='output.png')
-            img = cv2.imread('output.png')
-            cv2.imshow('img', img)
-            cv2.waitKey(33)
+            # img = cv2.imread('output.png')
+            # cv2.imshow('img', img)
+            # cv2.waitKey(33)
         if board.is_game_over():
             winner = board.outcome().winner
             break
