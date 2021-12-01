@@ -46,14 +46,17 @@ MCTS::~MCTS() {}
 
 thc::Move MCTS::run(const UCI_go_opt &go_opt,
                     const std::shared_ptr<thc::ChessRules> cr) {
-  std::chrono::time_point<std::chrono::steady_clock> start;
+  std::chrono::time_point<std::chrono::steady_clock> start =
+      std::chrono::steady_clock::now();
   Logger::debug("[MCTS] computing next move...");
   this->isWhite = cr->WhiteToPlay();
   // if (this->root == nullptr) {
-    this->root = std::make_shared<Node>();
-    this->root->color = this->isWhite ? BLACK : WHITE;
+  this->root = std::make_shared<Node>();
+  this->root->color = this->isWhite ? BLACK : WHITE;
   // }
+  int expand_count = 0;
   while (true) {
+    ++expand_count;
     thc::Move mv;
     thc::ChessRules cr_copy(*cr);
     Node *par = selection(&cr_copy);
@@ -66,6 +69,10 @@ thc::Move MCTS::run(const UCI_go_opt &go_opt,
       break;
     }
   }
+  for(int a=0; a<this->root->child_count; ++a) {
+    Logger::debug(this->root->children[a]->wins);
+  }
+  Logger::debug(expand_count);
   Logger::debug("[MCTS] calculate complete");
   return this->root->children[argmaxUCB(this->root.get())]->move;
 }

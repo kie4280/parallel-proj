@@ -5,14 +5,15 @@
 #include "MCTS/MCTS_root.h"
 #include "THC-chess/src/thc.h"
 #include "UCI/UCI.h"
-#define DEBUG 1
+#include "utils.h"
+// #define DEBUG
 
 void display_position(thc::ChessRules &cr, const std::string &description) {
   std::string fen = cr.ForsythPublish();
   std::string s = cr.ToDebugStr();
-  printf("%s\n", description.c_str());
-  printf("FEN (Forsyth Edwards Notation) = %s\n", fen.c_str());
-  printf("Position = %s\n", s.c_str());
+  Logger::debug(description + "\n");
+  Logger::debug("FEN (Forsyth Edwards Notation) = " + fen + "\n");
+  Logger::debug("Position = " + s + "\n");
 }
 
 int main() {
@@ -113,9 +114,10 @@ int main() {
           mv = MCTS.run(go_opt, cr);
       */
       // MCTS root run get single move
-      mcts->run(go_opt, cr);
+      mv = mcts->run(go_opt, cr);
 
       std::cout << "bestmove " << mv.TerseOut() << std::endl;
+      Logger::debug("best move: " + mv.TerseOut());
       cr->PlayMove(mv);
 #ifdef DEBUG
       display_position(*cr, "");

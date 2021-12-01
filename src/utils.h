@@ -7,7 +7,10 @@
 // Warning: This library is not thread-safe!!
 namespace Logger {
 extern std::fstream debugFile;
-void debug(std::string str);
+template<typename T>
+void debug(T obj) {
+  debugFile << obj << std::endl;
+}
 void closeLog();
 }  // namespace Logger
 

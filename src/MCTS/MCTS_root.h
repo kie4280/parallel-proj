@@ -15,7 +15,7 @@
 
 #define UCB_explore 1.414f
 #define SIMS 3
-#define TL_PADDING 100
+#define TL_PADDING 5
 
 struct Node;
 

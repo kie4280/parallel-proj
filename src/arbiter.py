@@ -5,8 +5,8 @@ from cairosvg import svg2png
 # import cv2
 
 SHOW_IMG = 1
-P1_ROUND_TIME = 0.1
-P2_ROUND_TIME = 0.1
+P1_ROUND_TIME = 1
+P2_ROUND_TIME = 5
 ITERRATION = 100
 
 stockfish = chess.engine.SimpleEngine.popen_uci(r"engines/stockfish_14.1_linux_x64_avx2")

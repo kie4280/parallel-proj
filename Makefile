@@ -1,5 +1,5 @@
 CXX := g++
-CXX_FLAGS := -std=c++17 -lpthread -g
+CXX_FLAGS := -std=c++17 -lpthread -g -O3
 OBJECT := build/UCI.o build/thc.o
 
 
