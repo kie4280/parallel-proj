@@ -2,18 +2,22 @@ import chess
 import chess.engine
 import chess.svg
 from cairosvg import svg2png
-# import cv2
+# import logging
+
+# Enable debug logging.
+# logging.basicConfig(level=logging.DEBUG)
+
 
 SHOW_IMG = 1
-P1_ROUND_TIME = 1
+P1_ROUND_TIME = 5
 P2_ROUND_TIME = 5
-ITERRATION = 100
+ITERRATION = 1
 
 stockfish = chess.engine.SimpleEngine.popen_uci(r"engines/stockfish_14.1_linux_x64_avx2")
 pthread_MCTS = chess.engine.SimpleEngine.popen_uci(r"build/main.out")
 #cuda_MCTS = chess.engine.SimpleEngine.popen_uci(r"path")
 
-player1 = stockfish
+player1 = pthread_MCTS
 player2 = pthread_MCTS
 
 

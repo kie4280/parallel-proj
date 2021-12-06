@@ -4,14 +4,18 @@
 #include <fstream>
 #include <string>
 
-// Warning: This library is not thread-safe!!
-namespace Logger {
-extern std::fstream debugFile;
-template<typename T>
-void debug(T obj) {
-  debugFile << obj << std::endl;
-}
-void closeLog();
-}  // namespace Logger
+class Logger {
+ private:
+  std::fstream debugFile;
+  void closeLog();
+
+ public:
+  Logger(const std::string filename = "debug.log");
+  ~Logger();
+  template <typename T>
+  void debug(T obj) {
+    debugFile << obj << std::endl;
+  }
+};
 
 #endif

@@ -8,12 +8,16 @@
 #include "utils.h"
 // #define DEBUG
 
+namespace {
+Logger logger("main.log");
+}
+
 void display_position(thc::ChessRules &cr, const std::string &description) {
   std::string fen = cr.ForsythPublish();
   std::string s = cr.ToDebugStr();
-  Logger::debug(description + "\n");
-  Logger::debug("FEN (Forsyth Edwards Notation) = " + fen + "\n");
-  Logger::debug("Position = " + s + "\n");
+  logger.debug(description + "\n");
+  logger.debug("FEN (Forsyth Edwards Notation) = " + fen + "\n");
+  logger.debug("Position = " + s + "\n");
 }
 
 int main() {
@@ -114,10 +118,14 @@ int main() {
           mv = MCTS.run(go_opt, cr);
       */
       // MCTS root run get single move
-      mv = mcts->run(go_opt, cr);
+      try {
+        mv = mcts->run(go_opt, cr);
+      } catch (std::exception e) {
+        logger.debug(e.what());
+      }
 
       std::cout << "bestmove " << mv.TerseOut() << std::endl;
-      Logger::debug("best move: " + mv.TerseOut());
+      logger.debug("best move: " + mv.TerseOut());
       cr->PlayMove(mv);
 #ifdef DEBUG
       display_position(*cr, "");
