@@ -2,10 +2,15 @@ CXX := g++
 CXX_FLAGS := -std=c++17 -lpthread -g -O3
 OBJECT := build/UCI.o build/thc.o
 
+NVCC = nvcc
+CUDA_LINK_FLAGS =  -rdc=true -gencode=arch=compute_61,code=sm_61 -Xcompiler '-fPIC' 
+CUDA_COMPILE_FLAGS = --device-c -gencode=arch=compute_61,code=sm_61 -Xcompiler '-fPIC' -g -O3
 
 all: makebuild src/main.cpp thc UCI src/utils.cpp
-	$(CXX) $(CXX_FLAGS) -Isrc/MCTS/ -Isrc/ src/main.cpp src/utils.cpp \
-	src/MCTS/MCTS_root.cpp $(OBJECT) -o build/main.out
+	$(CXX) -Isrc/MCTS/ -Isrc/ src/main.cpp src/utils.cpp \
+	src/MCTS/MCTS_root.cpp $(OBJECT) $(CXX_FLAGS) -o build/main.out
+
+#TODO:nvcc compile
 
 makebuild: 
 	mkdir -p build
