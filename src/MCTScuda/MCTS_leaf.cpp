@@ -7,6 +7,7 @@
 
 #include "../utils.h"
 
+extern void leaf_parallel(char *chess_raw, float *scores, int n);
 
 namespace {
 inline int argmaxUCB(Node *n) {
@@ -15,7 +16,7 @@ inline int argmaxUCB(Node *n) {
   float par_log = log(n->visits);
   for (int a = 0; a < n->child_count; ++a) {
     const Node &child = *n->children[a];
-    float score = (float)child.wins / child.visits +
+    float score = child.wins / child.visits +
                   UCB_explore * std::sqrt(par_log / child.visits);
     if (score > max_s) {
       max_s = score;
@@ -41,6 +42,7 @@ void generate_next_board_parallel(int id, thc::ChessRules *cr, thc::MOVELIST *li
     thc::ChessRules crc(*cr);
     crc.PlayMove(list->moves[i + start]);
     memcpy(chess_raw + (i + start) * BOARD_LENGTH, crc.squares, BOARD_LENGTH);
+    //logger.debug(crc.squares);
   }
 
 };
@@ -51,7 +53,7 @@ MCTS::MCTS() : gen(rd()) {}
 MCTS::~MCTS() {}
 
 thc::Move MCTS::run(const UCI_go_opt &go_opt,
-                    const std::shared_ptr<thc::ChessRules> cr) {
+                    std::shared_ptr<thc::ChessRules> cr) {
   std::chrono::time_point<std::chrono::steady_clock> start =
       std::chrono::steady_clock::now();
   logger.debug("[MCTS] computing next move...");
@@ -139,7 +141,7 @@ std::array<float, 2> MCTS::simulate(Node *node, thc::ChessRules *cr) {
 
   std::thread threads[THREAD_NUM];
   for(int i = 0; i < THREAD_NUM; i++){
-    threads[i] = std::thread(i, generate_next_board_parallel, cr, &list, chess_raw);
+    threads[i] = std::thread(generate_next_board_parallel, i, cr, &list, chess_raw);
   }
   /*for(int i = 0; i < count; i++){//TODO: pthread
     thc::ChessRules crc(*cr);
@@ -150,14 +152,22 @@ std::array<float, 2> MCTS::simulate(Node *node, thc::ChessRules *cr) {
     threads[i].join();
   }
 
-  hostFE(chess_raw, scores, count);
+  leaf_parallel(chess_raw, scores, count);
 
   for(int i = 0; i < count; i++){
     result[0] += scores[i];
+    if(scores[i] != 0.0){
+      logger.debug("non-0");
+      logger.debug(scores[i]);
+    }
+  }
+  if(result[0] != 0.0){
+    logger.debug("non-0");
+    logger.debug(result[0]);
   }
 
   if(node->color != this->isWhite)
-    result[0] = -result[0];
+    result[0] = result[0];
   
   delete [] chess_raw;
   delete [] scores;

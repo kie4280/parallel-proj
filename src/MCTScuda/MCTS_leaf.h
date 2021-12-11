@@ -8,7 +8,6 @@
 
 #include "../THC-chess/src/thc.h"
 #include "../UCI/UCI.h"
-#include "leaf.h"
 
 #define WHITE 0
 #define BLACK 1
@@ -23,7 +22,7 @@
 struct Node;
 
 struct Node {
-  int wins = 0;
+  float wins = 0;
   int visits = 0;
   thc::Move move;
   uint8_t color = WHITE;
@@ -48,7 +47,7 @@ class MCTS {
   MCTS();
   ~MCTS();
   thc::Move run(const UCI_go_opt &go_opt,
-                const std::shared_ptr<thc::ChessRules> cr);
+                std::shared_ptr<thc::ChessRules> cr);
 
   void reset();
 };

@@ -25,10 +25,6 @@ int main() {
   thc::Move mv;
   UCI_opt PP_UCI_opt;
 
-  /* TODO:
-      MCTS declare here.
-  */
-  // MCTS root
   auto mcts = std::make_unique<MCTS>();
 
   std::string line;

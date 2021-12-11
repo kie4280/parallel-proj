@@ -1,65 +1,67 @@
 #include <cuda.h>
-#include "leaf.h"
+#include<stdio.h>
+#define BOARD_LENGTH 64
 
 __global__ void leaf_simple_evaluation(char *chess_raw, float *scores, int n) {
-    int id = blockIdx.x * blockDim.x + threadIdx.x;
-    int result = 0;
-
+    int id = threadIdx.x;
+    float result = 0.0f;
     if (id < n){
-        char *p = chess_raw + id * BOARD_LENGTH;
+        int lower = id * BOARD_LENGTH;
 
         for(int i = 0; i < BOARD_LENGTH; i++){
-            if(p[i] == '0')
+            char temp = chess_raw[lower + i];
+            if(temp == ' ')
                 continue;
-            else if(p[i] == 'K')
+            else if(temp == 'K')
                 result += 200;
-            else if(p[i] == 'k')
+            else if(temp == 'k')
                 result -= 200;
-            else if(p[i] == 'Q')
+            else if(temp == 'Q')
                 result += 9;
-            else if(p[i] == 'q')
+            else if(temp == 'q')
                 result -= 9;
-            else if(p[i] == 'R')
+            else if(temp == 'R')
                 result += 5;
-            else if(p[i] == 'r')
+            else if(temp == 'r')
                 result -= 5;
-            else if(p[i] == 'B')
+            else if(temp == 'B')
                 result += 3;
-            else if(p[i] == 'b')
+            else if(temp == 'b')
                 result -= 3;
-            else if(p[i] == 'N')
+            else if(temp == 'N')
                 result += 3;
-            else if(p[i] == 'n')
+            else if(temp == 'n')
                 result -= 3;
-            else if(p[i] == 'P')
+            else if(temp == 'P')
                 result += 1;
-            else if(p[i] == 'p')
+            else if(temp == 'p')
                 result -= 1;
         }
-        scores[id] = result / 20.0;
+        scores[id] = 1.0;
     }
-    
-}
+};
+//BUG: in leaf_simple_evaluation nothing happened
 
-void hostFE(char *chess_raw, float *scores, int n)
+void hostFE(char* chess_raw, float* scores, int n)
 {
     float *scores_d;
     char *chess_raw_d;
     cudaMalloc((void **)&chess_raw_d, n * BOARD_LENGTH * sizeof(char));
     cudaMalloc((void **)&scores_d, n * sizeof(float));
 
-    //move data from h to d
+
     cudaMemcpy(chess_raw_d, chess_raw, n * BOARD_LENGTH * sizeof(char), cudaMemcpyHostToDevice);
 
-    //kernel function 1-D
-    int blockSize = 1024;
-    int gridSize = (int)ceil((float)n/blockSize);
-    leaf_simple_evaluation<<<blockSize, gridSize>>>(chess_raw_d, scores_d, n);
 
-    //move data from d to h
+    dim3 thread_num(128);
+    dim3 block_num((n + thread_num.x - 1) / thread_num.x);
+    leaf_simple_evaluation<<<block_num ,thread_num>>>(chess_raw_d, scores_d, n);
     cudaDeviceSynchronize();
+
+
     cudaMemcpy(scores, scores_d, n * sizeof(float), cudaMemcpyDeviceToHost);
+
 
     cudaFree(chess_raw_d);
     cudaFree(scores_d);
-}
+};
