@@ -11,8 +11,8 @@ extern void leaf_parallel(char *chess_raw, float *scores, int n);
 
 namespace {
 inline int argmaxUCB(Node *n) {
-  float max_s = 0.0f;
-  int candidate = -1;
+  float max_s = -10000000.0f;
+  int candidate = 0;
   float par_log = log(n->visits);
   for (int a = 0; a < n->child_count; ++a) {
     const Node &child = *n->children[a];
@@ -67,10 +67,15 @@ thc::Move MCTS::run(const UCI_go_opt &go_opt,
     ++expand_count;
     thc::Move mv;
     thc::ChessRules cr_copy(*cr);
-
+    //logger.debug("[MCTS] selection start");
     Node *par = selection(&cr_copy);
+    //logger.debug(par->child_count);
+    //logger.debug(par->total_child);
+    //logger.debug("[MCTS] expansion start");
     Node *new_node = expansion(par, &cr_copy);
+    //logger.debug("[MCTS] simulate start");
     auto result = simulate(new_node, &cr_copy);
+    //logger.debug("[MCTS] backprop start");
     backprop(new_node, result);
 
     auto timer = std::chrono::duration_cast<std::chrono::milliseconds>(
@@ -82,7 +87,10 @@ thc::Move MCTS::run(const UCI_go_opt &go_opt,
   for (int a = 0; a < this->root->child_count; ++a) {
     logger.debug(this->root->children[a]->wins);
   }
+  logger.debug("expand non-leaf node:");
   logger.debug(expand_count);
+  logger.debug("simulate leaf node:");
+  logger.debug(this->root->visits);
   logger.debug("[MCTS] calculate complete");
   return this->root->children[argmaxUCB(this->root.get())]->move;
 }
@@ -119,9 +127,8 @@ Node *MCTS::expansion(Node *leaf, thc::ChessRules *cr) {
   if (leaf->total_child == 0) {
     return leaf;
   }
-
   std::shared_ptr<Node> &new_n = leaf->children[leaf->child_count++];
-  new_n->color = leaf->color == WHITE ? BLACK : WHITE;  // invert color
+  new_n->color = 1 - leaf->color;  // invert color
   new_n->parent = leaf;
   cr->PlayMove(new_n->move);
   return new_n.get();
@@ -143,11 +150,7 @@ std::array<float, 2> MCTS::simulate(Node *node, thc::ChessRules *cr) {
   for(int i = 0; i < THREAD_NUM; i++){
     threads[i] = std::thread(generate_next_board_parallel, i, cr, &list, chess_raw);
   }
-  /*for(int i = 0; i < count; i++){//TODO: pthread
-    thc::ChessRules crc(*cr);
-    crc.PlayMove(list.moves[i]);
-    memcpy(chess_raw + i * BOARD_LENGTH, crc.squares, BOARD_LENGTH);
-  }*/
+  
   for(int i = 0; i < THREAD_NUM; i++){
     threads[i].join();
   }
@@ -156,18 +159,11 @@ std::array<float, 2> MCTS::simulate(Node *node, thc::ChessRules *cr) {
 
   for(int i = 0; i < count; i++){
     result[0] += scores[i];
-    if(scores[i] != 0.0){
-      logger.debug("non-0");
-      logger.debug(scores[i]);
-    }
   }
-  if(result[0] != 0.0){
-    logger.debug("non-0");
-    logger.debug(result[0]);
-  }
+  result[0] /= count;
 
   if(node->color != this->isWhite)
-    result[0] = result[0];
+    result[0] = -result[0];
   
   delete [] chess_raw;
   delete [] scores;

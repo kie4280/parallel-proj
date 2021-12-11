@@ -4,8 +4,8 @@ OBJECT := build/UCI.o build/thc.o build/util.o
 
 
 NVCC = nvcc
-CUDA_LINK_FLAGS =  -rdc=true -gencode=arch=compute_61,code=sm_61 -Xcompiler '-fPIC' 
-CUDA_COMPILE_FLAGS = --device-c -gencode=arch=compute_61,code=sm_61 -Xcompiler '-fPIC' -g -O3
+CUDA_LINK_FLAGS =  -rdc=true -gencode=arch=compute_86,code=sm_86 -Xcompiler '-fPIC' 
+CUDA_COMPILE_FLAGS = --device-c -gencode=arch=compute_86,code=sm_86 -Xcompiler '-fPIC' -g -O3
 CUDA_OBJECT = build/main_leaf.o build/leaf.o build/bridge.o build/MCTS_leaf.o 
 
 all: makebuild src/main.cpp thc UCI src/utils.cpp

@@ -18,8 +18,8 @@ stockfish = chess.engine.SimpleEngine.popen_uci(r"engines/stockfish_14.1_linux_x
 pthread_MCTS = chess.engine.SimpleEngine.popen_uci(r"build/MCTScuda.out")
 #cuda_MCTS = chess.engine.SimpleEngine.popen_uci(r"path")
 
-player1 = pthread_MCTS
-player2 = stockfish
+player1 = stockfish
+player2 = pthread_MCTS
 
 
 p1_win_cnt = 0

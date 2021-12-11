@@ -1,6 +1,16 @@
 #include <cuda.h>
-#include<stdio.h>
+#include <stdio.h>
 #define BOARD_LENGTH 64
+
+#define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
+inline void gpuAssert(cudaError_t code, char *file, int line, bool abort=true)
+{
+   if (code != cudaSuccess)
+   {
+      fprintf(stderr,"GPUassert: %s %s %d\n", cudaGetErrorString(code), file, line);
+      if (abort) exit(code);
+   }
+}
 
 __global__ void leaf_simple_evaluation(char *chess_raw, float *scores, int n) {
     int id = threadIdx.x;
@@ -37,10 +47,10 @@ __global__ void leaf_simple_evaluation(char *chess_raw, float *scores, int n) {
             else if(temp == 'p')
                 result -= 1;
         }
-        scores[id] = 1.0;
+        scores[id] = result;
     }
-};
-//BUG: in leaf_simple_evaluation nothing happened
+}
+//BUG: in leaf_simple_evaluation nothing happened, scores is always 0.
 
 void hostFE(char* chess_raw, float* scores, int n)
 {
@@ -49,19 +59,15 @@ void hostFE(char* chess_raw, float* scores, int n)
     cudaMalloc((void **)&chess_raw_d, n * BOARD_LENGTH * sizeof(char));
     cudaMalloc((void **)&scores_d, n * sizeof(float));
 
-
     cudaMemcpy(chess_raw_d, chess_raw, n * BOARD_LENGTH * sizeof(char), cudaMemcpyHostToDevice);
 
-
-    dim3 thread_num(128);
-    dim3 block_num((n + thread_num.x - 1) / thread_num.x);
-    leaf_simple_evaluation<<<block_num ,thread_num>>>(chess_raw_d, scores_d, n);
+    int thread_num = 128;
+    int block_num = (n + thread_num - 1) / thread_num;
+    leaf_simple_evaluation<<<block_num, thread_num>>>(chess_raw_d, scores_d, n);
     cudaDeviceSynchronize();
-
 
     cudaMemcpy(scores, scores_d, n * sizeof(float), cudaMemcpyDeviceToHost);
 
-
     cudaFree(chess_raw_d);
     cudaFree(scores_d);
-};
+}
