@@ -8,13 +8,11 @@ CUDA_LINK_FLAGS =  -rdc=true -gencode=arch=compute_86,code=sm_86 -Xcompiler '-fP
 CUDA_COMPILE_FLAGS = --device-c -gencode=arch=compute_86,code=sm_86 -Xcompiler '-fPIC' -g -O3
 CUDA_OBJECT = build/main_leaf.o build/leaf.o build/bridge.o build/MCTS_leaf.o 
 
-all: makebuild src/main.cpp thc UCI src/utils.cpp
-	$(CXX) -Isrc/MCTS/ -Isrc/ src/main.cpp src/utils.cpp \
-	src/MCTS/MCTS_root.cpp $(OBJECT) $(CXX_FLAGS) -o build/main.out
 
-#TODO:nvcc compile
+# build all
+all: makebuild MCTScuda MCTSroot
 
-
+#-------------MCTS leaf--------------#
 MCTScuda:  thc UCI util leaf main_leaf bridge MCTS_leaf
 	$(NVCC) ${CUDA_LINK_FLAGS} -o build/MCTScuda.out $(CUDA_OBJECT) $(OBJECT)
 
@@ -29,7 +27,26 @@ leaf:
 
 bridge: src/MCTScuda/bridge.cpp
 	$(CXX) src/MCTScuda/bridge.cpp $(CXX_FLAGS) -c -o build/bridge.o
+#-------------MCTS leaf end--------------#
 
+
+
+#-------------MCTS root--------------#
+MCTSroot: makebuild thc UCI util src/main_root.cpp 
+	$(CXX) -Isrc/MCTSroot/ -Isrc/ src/main_root.cpp \
+	src/MCTSroot/MCTS_root.cpp $(OBJECT) $(CXX_FLAGS) -o build/MCTSroot.out
+#-------------MCTS root end--------------#
+
+
+
+#-------------MCTS tree--------------#
+
+# TODO: MCTS_tree
+
+#-------------MCTS tree end--------------#
+
+
+#---------------others---------------#
 util:
 	$(CXX) src/utils.cpp $(CXX_FLAGS) -c -o build/util.o 
 

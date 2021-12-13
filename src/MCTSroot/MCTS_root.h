@@ -8,7 +8,7 @@
 
 #include "../THC-chess/src/thc.h"
 #include "../UCI/UCI.h"
-#include "thread_pool.hpp"
+#include "../thread_pool.hpp"
 
 #define WHITE 0
 #define BLACK 1

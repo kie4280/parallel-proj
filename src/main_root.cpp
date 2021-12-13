@@ -2,7 +2,7 @@
 #include <memory>
 #include <sstream>
 
-#include "MCTS/MCTS_root.h"
+#include "MCTSroot/MCTS_root.h"
 #include "THC-chess/src/thc.h"
 #include "UCI/UCI.h"
 #include "utils.h"
