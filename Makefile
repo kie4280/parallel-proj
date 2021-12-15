@@ -41,7 +41,9 @@ MCTSroot: makebuild thc UCI util src/main_root.cpp
 
 #-------------MCTS tree--------------#
 
-# TODO: MCTS_tree
+MCTStree: makebuild thc UCI util src/main_tree.cpp
+	$(CXX) -Isrc/MCTStree/ -Isrc/ src/main_tree.cpp \
+	src/MCTStree/MCTS_tree.cpp $(OBJECT) $(CXX_FLAGS) -o build/MCTStree.out
 
 #-------------MCTS tree end--------------#
 
