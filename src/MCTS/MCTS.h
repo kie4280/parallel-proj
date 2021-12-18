@@ -38,7 +38,10 @@ class MCTS {
   bool isWhite;
   inline Node *selection(thc::ChessRules *cr);
   inline Node *expansion(Node *leaf, thc::ChessRules *cr);
-  inline std::array<uint8_t, 2> simulate(Node *node, thc::ChessRules *cr);
+  inline std::array<uint8_t, 2> simulate(
+      Node *node, thc::ChessRules *cr,
+      const std::chrono::time_point<std::chrono::steady_clock> *start,
+      unsigned int TL);
   inline void backprop(Node *node, std::array<uint8_t, 2> &result);
 
  public:
@@ -50,6 +53,9 @@ class MCTS {
   void reset();
 };
 
+inline bool timesUp(
+    const std::chrono::time_point<std::chrono::steady_clock> *start,
+    unsigned int TL);
 
 
 #endif

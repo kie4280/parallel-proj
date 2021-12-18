@@ -6,7 +6,7 @@ import cv2
 import logging
 
 # Enable debug logging.
-logging.basicConfig(level=logging.DEBUG)
+# logging.basicConfig(level=logging.DEBUG)
 
 
 SHOW_IMG = 1
@@ -34,7 +34,6 @@ while cur_game < ITERRATION:
     cur_game += 1
     board.reset()
     while 1:
-        print("stp")
         result = player1.play(board, chess.engine.Limit(time=P1_ROUND_TIME))
         board.push(result.move)
         if SHOW_IMG:

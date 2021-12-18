@@ -62,7 +62,7 @@ int main() {
     } else if (token == "ucinewgame") {
       cr = std::make_shared<thc::ChessRules>();
       logger.debug("new game");
-      mcts.reset();
+      mcts->reset();
     } else if (token == "position") {
       std::string token, fen;
       is >> token;

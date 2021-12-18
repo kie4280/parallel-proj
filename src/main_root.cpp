@@ -60,14 +60,14 @@ int main() {
       color = cr->WhiteToPlay() ? "white" : "black";
       std::cout << "colorToPlay: " << color << std::endl;
     } else if (token == "ucinewgame") {
-      cr = std::shared_ptr<thc::ChessRules>(new thc::ChessRules());
+      cr = std::make_shared<thc::ChessRules>();
+      mcts_root->reset();
       logger.debug("new game");
-      mcts_root.reset();
     } else if (token == "position") {
       std::string token, fen;
       is >> token;
       if (token == "startpos") {
-        cr = std::shared_ptr<thc::ChessRules>(new thc::ChessRules());
+        cr = std::make_shared<thc::ChessRules>();
       } else if (token == "fen") {
         while (is >> token && token != "moves") fen += token + " ";
       } else {
@@ -133,7 +133,8 @@ int main() {
       display_position(*cr, "");
 #endif
     } else if (token == "quit") {
-      std::cout << "Terminating.." << std::endl;
+      std::cout << "Terminating..." << std::endl;
+      mcts_root->quit();
       break;
     } else  // Command not handled
       std::cout << "what?" << std::endl;

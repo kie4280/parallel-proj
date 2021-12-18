@@ -25,8 +25,15 @@ inline int argmaxUCB(Node *n) {
   return candidate;
 }
 
-Logger logger("debug_MCTS.log");
+Logger logger("MCTS_single.log");
 }  // namespace
+
+bool timesUp(const std::chrono::time_point<std::chrono::steady_clock> *start,
+             unsigned int TL) {
+  auto timer = std::chrono::duration_cast<std::chrono::milliseconds>(
+      std::chrono::steady_clock::now() - *start);
+  return timer.count() >= TL;
+}
 
 MCTS::MCTS() : gen(rd()) {}
 
@@ -51,14 +58,11 @@ thc::Move MCTS::run(const UCI_go_opt go_opt,
 
     Node *par = selection(&cr_copy);
     Node *new_node = expansion(par, &cr_copy);
-    auto result = simulate(new_node, &cr_copy);
+    auto result =
+        simulate(new_node, &cr_copy, &start, go_opt.movetime - TL_PADDING);
     backprop(new_node, result);
 
-    auto timer = std::chrono::duration_cast<std::chrono::milliseconds>(
-        std::chrono::steady_clock::now() - start);
-    if (timer.count() >= go_opt.movetime - TL_PADDING) {
-      break;
-    }
+    if (timesUp(&start, go_opt.movetime - TL_PADDING)) break;
   }
   // for (int a = 0; a < this->root->child_count; ++a) {
   //   logger.debug(this->root->children[a]->wins);
@@ -68,15 +72,14 @@ thc::Move MCTS::run(const UCI_go_opt go_opt,
   return this->root->children[argmaxUCB(this->root.get())]->move;
 }
 
-void MCTS::reset() { root.reset(); }
+void MCTS::reset() { root = nullptr; }
 
 Node *MCTS::selection(thc::ChessRules *cr) {
   Node *wp = root.get();
   while (wp->total_child == wp->child_count) {
     int candidate = argmaxUCB(wp);
 
-    if (candidate == -1) {
-      // throw "no candidate";
+    if (wp->child_count == 0) {
       break;
     } else {
       wp = wp->children[candidate].get();
@@ -95,6 +98,8 @@ Node *MCTS::expansion(Node *leaf, thc::ChessRules *cr) {
       std::shared_ptr<Node> &c = leaf->children[a];
       c = std::make_shared<Node>();
       c->move = list.moves[a];
+      c->color = leaf->color == WHITE ? BLACK : WHITE;  // invert color
+      c->parent = leaf;
     }
   }
   if (leaf->total_child == 0) {
@@ -102,13 +107,14 @@ Node *MCTS::expansion(Node *leaf, thc::ChessRules *cr) {
   }
 
   std::shared_ptr<Node> &new_n = leaf->children[leaf->child_count++];
-  new_n->color = leaf->color == WHITE ? BLACK : WHITE;  // invert color
-  new_n->parent = leaf;
   cr->PlayMove(new_n->move);
   return new_n.get();
 }
 
-std::array<uint8_t, 2> MCTS::simulate(Node *node, thc::ChessRules *cr) {
+std::array<uint8_t, 2> MCTS::simulate(
+    Node *node, thc::ChessRules *cr,
+    const std::chrono::time_point<std::chrono::steady_clock> *start,
+    unsigned int TL) {
   std::array<uint8_t, 2> wins = {0, 0};
   for (int t = 0; t < SIMS; ++t) {
     thc::ChessRules crc(*cr);

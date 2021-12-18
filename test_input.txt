@@ -1,3 +1,5 @@
 ucinewgame
 position startpos
 go movetime 5000
+go movetime 5000
+quit
