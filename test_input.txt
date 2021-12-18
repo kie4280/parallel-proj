@@ -1,0 +1,3 @@
+ucinewgame
+position startpos
+go movetime 5000

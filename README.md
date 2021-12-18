@@ -4,12 +4,12 @@ This is the repo for our final project. The proposal is in the proposal folder w
 
 ## Building this project
 
-### Using CMake (recommended)
+<!-- ### Using CMake (recommended)
 
 ```
 cmake -B build/ 
 make -C build/
-```
+``` -->
 
 ### Makefile
 

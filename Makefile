@@ -1,5 +1,5 @@
 CXX := g++
-CXX_FLAGS := -std=c++17 -lpthread -g -O3
+CXX_FLAGS := -std=c++17 -lpthread -g 
 OBJECT := build/UCI.o build/thc.o build/util.o 
 
 
@@ -10,7 +10,7 @@ CUDA_OBJECT = build/main_leaf.o build/leaf.o build/bridge.o build/MCTS_leaf.o
 
 
 # build all
-all: makebuild MCTScuda MCTSroot
+all: makebuild MCTScuda MCTSroot MCTStree MCTSsingle
 
 #-------------MCTS leaf--------------#
 MCTScuda:  thc UCI util leaf main_leaf bridge MCTS_leaf
@@ -32,7 +32,7 @@ bridge: src/MCTScuda/bridge.cpp
 
 
 #-------------MCTS root--------------#
-MCTSroot: makebuild thc UCI util src/main_root.cpp 
+MCTSroot: makebuild thc UCI util src/main_root.cpp src/MCTSroot/MCTS_root.cpp
 	$(CXX) -Isrc/MCTSroot/ -Isrc/ src/main_root.cpp \
 	src/MCTSroot/MCTS_root.cpp $(OBJECT) $(CXX_FLAGS) -o build/MCTSroot.out
 #-------------MCTS root end--------------#
@@ -40,12 +40,17 @@ MCTSroot: makebuild thc UCI util src/main_root.cpp
 
 
 #-------------MCTS tree--------------#
-
-MCTStree: makebuild thc UCI util src/main_tree.cpp
+MCTStree: makebuild thc UCI util src/main_tree.cpp src/MCTStree/MCTS_tree.cpp
 	$(CXX) -Isrc/MCTStree/ -Isrc/ src/main_tree.cpp \
 	src/MCTStree/MCTS_tree.cpp $(OBJECT) $(CXX_FLAGS) -o build/MCTStree.out
-
 #-------------MCTS tree end--------------#
+
+
+#-------------MCTS single--------------#
+MCTSsingle: makebuild thc UCI util src/main_single.cpp src/MCTS/MCTS.cpp
+	$(CXX) -Isrc/MCTS/ -Isrc/ src/main_single.cpp \
+	src/MCTS/MCTS.cpp $(OBJECT) $(CXX_FLAGS) -o build/MCTSsingle.out
+#-------------MCTS single end--------------#
 
 
 #---------------others---------------#
@@ -72,4 +77,4 @@ clean:
 	rm -r build/
 
 .PHONY: 
-	clean 
+	clean

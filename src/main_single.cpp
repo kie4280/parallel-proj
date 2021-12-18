@@ -2,7 +2,7 @@
 #include <memory>
 #include <sstream>
 
-#include "MCTSroot/MCTS_root.h"
+#include "MCTS/MCTS.h"
 #include "THC-chess/src/thc.h"
 #include "UCI/UCI.h"
 #include "utils.h"
@@ -29,7 +29,7 @@ int main() {
       MCTS declare here.
   */
   // MCTS root
-  auto mcts_root = std::make_unique<MCTS_ROOT>();
+  auto mcts = std::make_unique<MCTS>();
 
   std::string line;
   std::string token;
@@ -60,14 +60,14 @@ int main() {
       color = cr->WhiteToPlay() ? "white" : "black";
       std::cout << "colorToPlay: " << color << std::endl;
     } else if (token == "ucinewgame") {
-      cr = std::shared_ptr<thc::ChessRules>(new thc::ChessRules());
+      cr = std::make_shared<thc::ChessRules>();
       logger.debug("new game");
-      mcts_root.reset();
+      mcts.reset();
     } else if (token == "position") {
       std::string token, fen;
       is >> token;
       if (token == "startpos") {
-        cr = std::shared_ptr<thc::ChessRules>(new thc::ChessRules());
+        cr = std::make_shared<thc::ChessRules>();
       } else if (token == "fen") {
         while (is >> token && token != "moves") fen += token + " ";
       } else {
@@ -116,12 +116,9 @@ int main() {
         else if (token == "infinite")
           go_opt.infinite = true;
       }
-      /* TODO
-          mv = MCTS.run(go_opt, cr);
-      */
-      // MCTS root run get single move
+
       try {
-        mv = mcts_root->run(go_opt, cr);
+        mv = mcts->run(go_opt, cr);
       } catch (std::exception e) {
         logger.debug(e.what());
       }

@@ -3,23 +3,26 @@ import chess.engine
 import chess.svg
 from cairosvg import svg2png
 import cv2
-# import logging
+import logging
 
 # Enable debug logging.
-# logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG)
 
 
 SHOW_IMG = 1
-P1_ROUND_TIME = 1
-P2_ROUND_TIME = 1
+P1_ROUND_TIME = 5
+P2_ROUND_TIME = 5
 ITERRATION = 1
 
 stockfish = chess.engine.SimpleEngine.popen_uci(r"engines/stockfish_14.1_linux_x64_avx2")
-pthread_MCTS = chess.engine.SimpleEngine.popen_uci(r"build/MCTScuda.out")
-#cuda_MCTS = chess.engine.SimpleEngine.popen_uci(r"path")
+# cuda_MCTS = chess.engine.SimpleEngine.popen_uci(r"build/MCTScuda.out")
+root_MCTS = chess.engine.SimpleEngine.popen_uci(r"build/MCTSroot.out")
+# tree_MCTS = chess.engine.SimpleEngine.popen_uci(r"build/MCTSrtree.out")
+single_MCTS = chess.engine.SimpleEngine.popen_uci(r"build/MCTSsingle.out")
 
-player1 = stockfish
-player2 = pthread_MCTS
+
+player1 = single_MCTS
+player2 = root_MCTS
 
 
 p1_win_cnt = 0
@@ -31,6 +34,7 @@ while cur_game < ITERRATION:
     cur_game += 1
     board.reset()
     while 1:
+        print("stp")
         result = player1.play(board, chess.engine.Limit(time=P1_ROUND_TIME))
         board.push(result.move)
         if SHOW_IMG:
