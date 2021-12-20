@@ -6,6 +6,7 @@
 #include <random>
 #include <array>
 
+
 #include "../THC-chess/src/thc.h"
 #include "../UCI/UCI.h"
 #include "../thread_pool.hpp"
@@ -16,6 +17,7 @@
 #define UCB_explore 1.414f
 #define SIMS 3
 #define TL_PADDING 5
+
 
 struct Node;
 
@@ -47,6 +49,7 @@ class MCTS_ROOT {
 
 class MCTS {
  public:
+
   std::random_device rd;
   std::default_random_engine gen;
   std::shared_ptr<Node> root;

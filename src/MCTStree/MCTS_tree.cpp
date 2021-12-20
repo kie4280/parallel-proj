@@ -9,7 +9,6 @@
 
 #include "../utils.h"
 std::shared_mutex g_mutex;
-
 #define THREAD_NUM 4
 namespace {
 inline int argmaxUCB(Node *n) {
@@ -73,26 +72,23 @@ logger.debug("2222");
     thc::Move mv;
     thc::ChessRules cr_copy(*cr);
 
-    g_mutex.lock_shared();
+	g_mutex.lock();
     Node *par = tree->selection(&cr_copy);
-    g_mutex.unlock_shared();
-
-    g_mutex.lock();
     Node *new_node = tree->expansion(par, &cr_copy);
     g_mutex.unlock();
 
-    g_mutex.lock_shared();
+  //  g_mutex.lock_shared();
     auto result = tree->simulate(new_node, &cr_copy);
-    g_mutex.unlock_shared();
+   // g_mutex.unlock_shared();
 
     g_mutex.lock();
     tree->backprop(new_node, result);
     g_mutex.unlock();
 
-    g_mutex.lock();
+ //   g_mutex.lock();
     auto timer = std::chrono::duration_cast<std::chrono::milliseconds>(
         std::chrono::steady_clock::now() - start);
-    g_mutex.unlock();
+  //  g_mutex.unlock();
 
     if (timer.count() >= go_opt.movetime - TL_PADDING) {
       break;
@@ -129,6 +125,7 @@ Node *MCTS::expansion(Node *leaf, thc::ChessRules *cr) {
   }
   if (leaf->total_child == 0) {
     return leaf;
+	
   }
 
   std::shared_ptr<Node> &new_n = leaf->children[leaf->child_count++];
