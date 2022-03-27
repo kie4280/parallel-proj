@@ -1,6 +1,6 @@
 # Final Project
 
-This is the repo for our final project. The proposal is in the proposal folder with the name of proposal.pdf
+This is the repo for our final project. The proposal is in the proposal folder with the name of proposal.pdf. Our final result is in the PP_final_report.pdf
 
 ## Building this project
 
